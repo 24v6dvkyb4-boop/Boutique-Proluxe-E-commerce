@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Proluxe — Maison de Luxe · Paris depuis 1987</title>
 <meta name="description" content="Proluxe, maison de luxe française depuis 1987. Montres, maroquinerie, bijoux, parfums et lunettes d'exception façonnés à la main.">
+<meta name="theme-color" content="#0a0a0a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Proluxe — Maison de Luxe">
+<meta property="og:description" content="Montres, maroquinerie, bijoux, parfums et lunettes d'exception.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&q=80">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0a0a'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' text-anchor='middle' fill='%23c9a961'%3EP%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -200,24 +206,33 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:70px 0 
 .cookie-btns .accept{background:var(--gold);border:1px solid var(--gold);color:var(--black)}
 @media(max-width:900px){.nav-left{display:none}.mobile-only{display:flex}.product-layout{grid-template-columns:1fr;gap:32px}.checkout-grid{grid-template-columns:1fr}.summary-box{position:static}.footer-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.header-inner{height:64px;padding:0 16px}.container{padding:0 16px}.brand{font-size:20px;letter-spacing:4px}.cart-btn{padding:9px 14px;font-size:11px}.section{padding:50px 0}.hero{height:70vh}.footer-grid{grid-template-columns:1fr}.field-row{grid-template-columns:1fr}.step:not(:last-child)::after{width:16px;margin:0 6px}.step{font-size:10px}}
+.demo-bar{background:var(--gold);color:var(--black);text-align:center;font-size:12px;letter-spacing:.5px;padding:7px 16px;font-weight:500}
+.todo{background:#3a2a00;color:#ffd166;padding:0 4px;border-radius:2px;font-style:normal}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.check-row{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted);margin:6px 0 18px;line-height:1.5}
+.check-row input{margin-top:3px;accent-color:var(--gold);width:16px;height:16px;flex:none}
+.check-row a{color:var(--gold);text-decoration:underline;cursor:pointer}
+.legal-note{font-size:12px;color:var(--muted);margin-top:10px}
 </style>
 </head>
 <body>
 
+<div class="demo-bar" id="demoBar" hidden>Boutique en démonstration · aucune commande n'est réellement passée ni débitée</div>
 <header>
   <div class="header-inner">
-    <button class="icon-btn mobile-only" id="menuBtn">☰</button>
+    <button class="icon-btn mobile-only" id="menuBtn" aria-label="Ouvrir le menu" aria-controls="mobileNav">☰</button>
     <nav class="nav-left">
       <a data-nav="shop">Boutique</a>
       <a data-nav="shop" data-cat="Montres">Montres</a>
       <a data-nav="shop" data-cat="Bijoux">Bijoux</a>
       <a data-nav="shop" data-cat="Maroquinerie">Maroquinerie</a>
       <a data-nav="shop" data-cat="Parfums">Parfums</a>
+      <a data-nav="shop" data-cat="Lunettes">Lunettes</a>
       <a data-nav="history">Maison</a>
     </nav>
-    <div class="brand" data-nav="home">PRO<span>LUXE</span></div>
+    <div class="brand" data-nav="home" role="link" aria-label="Accueil Proluxe">PRO<span>LUXE</span></div>
     <div class="nav-right">
-      <button class="cart-btn" id="openCart">Panier <span class="badge" id="badge">0</span></button>
+      <button class="cart-btn" id="openCart" aria-label="Ouvrir le panier">Panier <span class="badge" id="badge">0</span></button>
     </div>
   </div>
   <div class="mobile-nav" id="mobileNav">
@@ -271,8 +286,8 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:70px 0 
       <div class="shop-toolbar">
         <div class="pills" id="shopPills"></div>
         <div class="toolbar-right">
-          <input type="text" class="shop-search" id="shopSearch" placeholder="Rechercher…">
-          <select id="shopSort">
+          <input type="search" class="shop-search" id="shopSearch" placeholder="Rechercher…" aria-label="Rechercher un produit">
+          <select id="shopSort" aria-label="Trier les produits">
             <option value="featured">Trier : Sélection</option>
             <option value="price-asc">Prix croissant</option>
             <option value="price-desc">Prix décroissant</option>
@@ -329,7 +344,6 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:70px 0 
           <li>Traçabilité complète des matières premières</li>
           <li>Cuirs européens tannés végétalement</li>
           <li>Or et diamants issus de filières responsables certifiées</li>
-          <li>Ateliers labellisés Entreprise du Patrimoine Vivant (EPV)</li>
           <li>Aucune sous-traitance hors Europe</li>
         </ul>
       </div>
@@ -363,25 +377,28 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:70px 0 
       <p style="color:var(--muted);font-weight:300;margin-bottom:36px">Notre équipe vous répond sous 24h ouvrées.</p>
       <div class="contact-card">
         <h3>Par téléphone</h3>
-        <p class="big">01 23 45 67 89</p>
+        <p class="big"><span data-co="phone"></span></p>
         <p>Du lundi au vendredi, de 9h à 18h (appel non surtaxé)</p>
       </div>
       <div class="contact-card">
         <h3>Par email</h3>
-        <p class="big">contact@proluxe.fr</p>
+        <p class="big"><span data-co="email"></span></p>
         <p>Réponse sous 24h ouvrées</p>
       </div>
       <div class="contact-card">
         <h3>Adresse postale</h3>
-        <p style="font-size:15px;color:#b5b5b5;line-height:1.9">Proluxe Maison de Luxe<br>12 Rue de Rivoli<br>75001 Paris, France</p>
+        <p style="font-size:15px;color:#b5b5b5;line-height:1.9"><span data-co="name"></span><br><span data-co="street"></span><br><span data-co="city"></span></p>
       </div>
-      <form id="contactForm" class="contact-card">
+      <form id="contactForm" class="contact-card" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="hp"><label>Ne pas remplir <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
         <h3>Envoyez-nous un message</h3>
-        <div class="field"><label>Votre nom *</label><input type="text" id="c_name" required></div>
-        <div class="field"><label>Votre email *</label><input type="email" id="c_email" required></div>
-        <div class="field"><label>Sujet *</label><input type="text" id="c_subject" required></div>
-        <div class="field"><label>Message *</label><textarea id="c_message" rows="5" required></textarea></div>
-        <button type="submit" class="btn btn-block">Envoyer le message</button>
+        <div class="field"><label for="c_name">Votre nom *</label><input type="text" id="c_name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="c_email">Votre email *</label><input type="email" id="c_email" name="email" autocomplete="email" required></div>
+        <div class="field"><label for="c_subject">Sujet *</label><input type="text" id="c_subject" name="subject" required></div>
+        <div class="field"><label for="c_message">Message *</label><textarea id="c_message" name="message" rows="5" required></textarea></div>
+        <label class="check-row"><input type="checkbox" name="consent" value="oui" required><span>J'accepte que mes données soient utilisées pour répondre à ma demande, conformément à la <a data-nav="privacy">politique de confidentialité</a>. *</span></label>
+        <button type="submit" class="btn btn-block" id="contactBtn">Envoyer le message</button>
       </form>
     </div>
   </section>
@@ -391,24 +408,24 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:70px 0 
       <div class="eyebrow">Informations légales</div>
       <h1>Mentions légales</h1>
       <div class="static-content">
-        <p><em>Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique (LCEN), voici les mentions légales du site proluxe.fr.</em></p>
+        <p><em>Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique (LCEN), voici les mentions légales du site <span data-co="domain"></span>.</em></p>
         <h2>1. Éditeur du site</h2>
-        <p><strong>Proluxe SAS</strong><br>Société par actions simplifiée au capital de 50 000 €<br>Siège social : 12 Rue de Rivoli, 75001 Paris, France<br>RCS Paris B 123 456 789<br>SIRET : 123 456 789 00012<br>N° TVA intracommunautaire : FR 12 123456789<br>Code APE : 4777Z<br>Directeur de la publication : Madame Sophie Laurent, Présidente</p>
-        <p>Téléphone : 01 23 45 67 89 (appel non surtaxé)<br>Email : contact@proluxe.fr</p>
+        <p><strong><span data-co="name"></span></strong><br><span data-co="legalForm"></span> au capital de <span data-co="capital"></span><br>Siège social : <span data-co="street"></span>, <span data-co="city"></span><br><span data-co="rcs"></span><br>SIRET : <span data-co="siret"></span><br>N° TVA intracommunautaire : <span data-co="vat"></span><br>Code APE : <span data-co="ape"></span><br>Directeur de la publication : <span data-co="director"></span></p>
+        <p>Téléphone : <span data-co="phone"></span> (appel non surtaxé)<br>Email : <span data-co="email"></span></p>
         <h2>2. Hébergeur du site</h2>
-        <p><strong>Netlify, Inc.</strong><br>512 2nd Street, Suite 200<br>San Francisco, CA 94107, États-Unis<br>Téléphone : +1 (415) 691-1572<br>Site : netlify.com</p>
+        <p><strong>Netlify, Inc.</strong><br>512 2nd Street, Suite 200<br>San Francisco, CA 94107, États-Unis<br>Site : netlify.com</p>
         <h2>3. Propriété intellectuelle</h2>
-        <p>L'ensemble des éléments composant ce site (marques, logos, textes, photographies, dessins, modèles, bases de données) est la propriété exclusive de Proluxe SAS ou fait l'objet d'une licence d'utilisation. Toute reproduction, représentation, modification ou exploitation, totale ou partielle, sans autorisation écrite préalable, est strictement interdite et constitue une contrefaçon sanctionnée par les articles L.335-2 et suivants du Code de la propriété intellectuelle.</p>
+        <p>L'ensemble des éléments composant ce site (marques, logos, textes, photographies, dessins, modèles, bases de données) est la propriété exclusive de <span data-co="name"></span> ou fait l'objet d'une licence d'utilisation. Toute reproduction, représentation, modification ou exploitation, totale ou partielle, sans autorisation écrite préalable, est strictement interdite et constitue une contrefaçon sanctionnée par les articles L.335-2 et suivants du Code de la propriété intellectuelle.</p>
         <h2>4. Données personnelles</h2>
         <p>Le traitement des données personnelles est détaillé dans notre <a data-nav="privacy">Politique de confidentialité</a>, conforme au Règlement Général sur la Protection des Données (RGPD).</p>
         <h2>5. Cookies</h2>
         <p>L'utilisation des cookies est détaillée dans notre <a data-nav="cookies">Politique cookies</a>.</p>
         <h2>6. Médiation de la consommation</h2>
         <p>Conformément à l'article L.616-1 du Code de la consommation, en cas de litige non résolu avec le service client, le consommateur peut recourir gratuitement au médiateur de la consommation :</p>
-        <p><strong>CM2C — Centre de Médiation de la Consommation de Conciliateurs de Justice</strong><br>14 rue Saint Jean, 75017 Paris<br>Site : cm2c.net</p>
+        <p><span data-co="mediator"></span></p>
         <h2>7. Droit applicable</h2>
         <p>Le présent site et ses mentions légales sont soumis au droit français. En cas de litige, les tribunaux français seront seuls compétents.</p>
-        <p style="margin-top:30px;font-size:12px;color:var(--muted)">Dernière mise à jour : novembre 2025</p>
+        <p style="margin-top:30px;font-size:12px;color:var(--muted)">Dernière mise à jour : novembre 2026</p>
       </div>
     </div>
   </section>
@@ -418,13 +435,13 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:70px 0 
       <div class="eyebrow">Conditions commerciales</div>
       <h1>Conditions Générales de Vente</h1>
       <div class="static-content">
-        <p><em>Les présentes Conditions Générales de Vente (CGV) régissent les relations contractuelles entre Proluxe SAS et tout consommateur effectuant un achat sur le site proluxe.fr, conformément aux articles L.111-1 et suivants du Code de la consommation.</em></p>
+        <p><em>Les présentes Conditions Générales de Vente (CGV) régissent les relations contractuelles entre <span data-co="name"></span> et tout consommateur effectuant un achat sur le site <span data-co="domain"></span>, conformément aux articles L.111-1 et suivants du Code de la consommation.</em></p>
         <h2>Article 1 — Objet</h2>
-        <p>Les présentes CGV ont pour objet de définir les modalités de vente à distance des produits proposés par Proluxe SAS (montres, maroquinerie, bijoux, parfums, lunettes) à tout consommateur. Toute commande implique l'acceptation sans réserve des présentes CGV.</p>
+        <p>Les présentes CGV ont pour objet de définir les modalités de vente à distance des produits proposés par la société (montres, maroquinerie, bijoux, parfums, lunettes) à tout consommateur. Toute commande implique l'acceptation sans réserve des présentes CGV.</p>
         <h2>Article 2 — Produits</h2>
         <p>Les produits sont décrits avec la plus grande exactitude possible. Les photographies sont données à titre indicatif et ne sauraient engager le vendeur. Les produits sont proposés dans la limite des stocks disponibles.</p>
         <h2>Article 3 — Prix</h2>
-        <p>Les prix sont indiqués en euros, toutes taxes comprises (TTC), hors frais de livraison. Proluxe SAS se réserve le droit de modifier ses prix à tout moment, étant entendu que le prix applicable est celui affiché au moment de la validation de la commande.</p>
+        <p>Les prix sont indiqués en euros, toutes taxes comprises (TTC), hors frais de livraison. La société se réserve le droit de modifier ses prix à tout moment, étant entendu que le prix applicable est celui affiché au moment de la validation de la commande.</p>
         <p>Conformément à la directive Omnibus (article L.112-1-1 du Code de la consommation), en cas de promotion, le prix de référence est le prix le plus bas pratiqué au cours des 30 jours précédant l'entrée en vigueur de la promotion.</p>
         <h2>Article 4 — Commande</h2>
         <p>Le processus de commande comprend les étapes suivantes : sélection des produits, ajout au panier, vérification du panier, saisie des coordonnées de livraison, saisie des coordonnées de paiement, validation finale. La validation finale vaut conclusion du contrat de vente.</p>
@@ -436,13 +453,13 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:70px 0 
         <p>Les produits sont livrés à l'adresse indiquée par le client lors de la commande. Délais indicatifs :</p>
         <ul>
           <li><strong>France métropolitaine :</strong> 2 à 4 jours ouvrés</li>
-          <li><strong>Belgique, Suisse, Luxembourg :</strong> 3 à 6 jours ouvrés</li>
-          <li><strong>Reste de l'Union européenne :</strong> 5 à 8 jours ouvrés</li>
+          <li><strong>Belgique, Luxembourg :</strong> 3 à 6 jours ouvrés</li>
+          <li><strong>Suisse :</strong> 3 à 6 jours ouvrés (droits et taxes d'importation éventuels à la charge du client)</li>
         </ul>
         <p>Frais de livraison : 15 € (offerts à partir de 500 € d'achat). En cas de retard de livraison supérieur à 30 jours, le client peut annuler sa commande et obtenir un remboursement intégral.</p>
         <h2>Article 7 — Droit de rétractation</h2>
         <p>Conformément aux articles L.221-18 et suivants du Code de la consommation, le client dispose d'un délai de <strong>14 jours</strong> à compter de la réception du produit pour exercer son droit de rétractation, sans avoir à justifier de motif ni à payer de pénalité.</p>
-        <p>Pour exercer ce droit, le client doit notifier sa décision par email à contact@proluxe.fr ou par courrier à Proluxe SAS — Service Retours, 12 Rue de Rivoli, 75001 Paris. Le remboursement intervient dans les 14 jours suivant la réception du produit retourné, dans son état et emballage d'origine.</p>
+        <p>Pour exercer ce droit, le client doit notifier sa décision par email à <span data-co="email"></span> ou par courrier à <span data-co="name"></span> — Service Retours, <span data-co="street"></span>, <span data-co="city"></span>. Les frais de retour sont à la charge du client, sauf produit défectueux ou non conforme. Le remboursement intervient dans les 14 jours suivant la réception du produit retourné, dans son état et emballage d'origine.</p>
         <p><em>Exception : les produits personnalisés ou gravés ne sont pas éligibles au droit de rétractation (article L.221-28 du Code de la consommation).</em></p>
         <h2>Article 8 — Garanties légales</h2>
         <p>Tous nos produits bénéficient de :</p>
@@ -452,13 +469,12 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:70px 0 
         </ul>
         <p>En outre, une <strong>garantie commerciale de 5 ans</strong> est offerte sur les mouvements horlogers, ainsi qu'un service d'entretien gratuit la première année.</p>
         <h2>Article 9 — Responsabilité</h2>
-        <p>Proluxe SAS ne saurait être tenue responsable des dommages résultant d'une mauvaise utilisation des produits, d'une utilisation non conforme à leur destination, ou d'un cas de force majeure.</p>
+        <p>La société ne saurait être tenue responsable des dommages résultant d'une mauvaise utilisation des produits, d'une utilisation non conforme à leur destination, ou d'un cas de force majeure.</p>
         <h2>Article 10 — Litiges et médiation</h2>
-        <p>En cas de litige, le client s'adresse en priorité au service client à contact@proluxe.fr. À défaut de résolution amiable, il peut recourir gratuitement au médiateur de la consommation CM2C (14 rue Saint Jean, 75017 Paris — cm2c.net), conformément à l'article L.612-1 du Code de la consommation.</p>
-        <p>Le client peut également utiliser la plateforme de Règlement en Ligne des Litiges (RLL) de la Commission européenne : <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a></p>
+        <p>En cas de litige, le client s'adresse en priorité au service client à <span data-co="email"></span>. À défaut de résolution amiable, il peut recourir gratuitement au médiateur de la consommation : <span data-co="mediator"></span>, conformément à l'article L.612-1 du Code de la consommation.</p>
         <h2>Article 11 — Droit applicable</h2>
         <p>Les présentes CGV sont soumises au droit français. En cas de litige, et après échec de toute tentative de résolution amiable, les tribunaux français seront compétents.</p>
-        <p style="margin-top:30px;font-size:12px;color:var(--muted)">Version en vigueur au 14 novembre 2025</p>
+        <p style="margin-top:30px;font-size:12px;color:var(--muted)">Version en vigueur au 14 novembre 2026</p>
       </div>
     </div>
   </section>
@@ -470,7 +486,7 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:70px 0 
       <div class="static-content">
         <p><em>Cette politique est établie conformément au Règlement (UE) 2016/679 du 27 avril 2016 (RGPD) et à la loi n° 78-17 du 6 janvier 1978 modifiée (Informatique et Libertés).</em></p>
         <h2>1. Responsable du traitement</h2>
-        <p><strong>Proluxe SAS</strong><br>12 Rue de Rivoli, 75001 Paris<br>SIRET : 123 456 789 00012<br>Contact DPO : dpo@proluxe.fr</p>
+        <p><strong><span data-co="name"></span></strong><br><span data-co="street"></span>, <span data-co="city"></span><br>SIRET : <span data-co="siret"></span><br>Contact données personnelles : <span data-co="privacyEmail"></span></p>
         <h2>2. Données collectées</h2>
         <p>Dans le cadre de l'utilisation du site, nous collectons les données suivantes :</p>
         <ul>
@@ -478,13 +494,13 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:70px 0 
           <li><strong>Coordonnées :</strong> adresse email, numéro de téléphone, adresse postale</li>
           <li><strong>Données de commande :</strong> historique d'achats, montant, date</li>
           <li><strong>Données de paiement :</strong> traitées uniquement par Stripe, jamais stockées par Proluxe</li>
-          <li><strong>Données de navigation :</strong> adresse IP, pages visitées (via cookies analytiques si consentement)</li>
+          <li><strong>Données techniques :</strong> adresse IP (journaux techniques de l'hébergeur)</li>
         </ul>
         <h2>3. Finalités et bases légales</h2>
         <ul>
           <li><strong>Gestion des commandes et livraisons :</strong> exécution du contrat (art. 6.1.b RGPD)</li>
           <li><strong>Facturation et comptabilité :</strong> obligation légale (art. 6.1.c RGPD)</li>
-          <li><strong>Envoi de la newsletter :</strong> consentement (art. 6.1.a RGPD)</li>
+          <li><strong>Réponse aux demandes de contact :</strong> consentement (art. 6.1.a RGPD)</li>
           <li><strong>Amélioration du site :</strong> intérêt légitime (art. 6.1.f RGPD)</li>
           <li><strong>Lutte contre la fraude :</strong> intérêt légitime</li>
         </ul>
@@ -492,17 +508,16 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:70px 0 
         <p>Vos données sont transmises aux prestataires suivants, dans le strict cadre de l'exécution de la commande :</p>
         <ul>
           <li><strong>Stripe Payments Europe, Ltd.</strong> — traitement des paiements (Irlande)</li>
-          <li><strong>Netlify, Inc.</strong> — hébergement du site (États-Unis, sous clauses contractuelles types)</li>
-          <li><strong>Colissimo / DHL</strong> — livraison des commandes</li>
-          <li><strong>Brevo (Sendinblue)</strong> — envoi des emails transactionnels</li>
+          <li><strong>Netlify, Inc.</strong> — hébergement du site et réception des messages du formulaire de contact (États-Unis, sous clauses contractuelles types)</li>
+          <li><span data-co="carriers"></span> — livraison des commandes</li>
         </ul>
         <p>Aucune donnée n'est vendue ou cédée à des tiers à des fins commerciales.</p>
         <h2>5. Durée de conservation</h2>
         <ul>
-          <li><strong>Compte client actif :</strong> pendant toute la durée de la relation commerciale</li>
-          <li><strong>Prospects :</strong> 3 ans à compter du dernier contact</li>
+          <li><strong>Clients :</strong> pendant toute la durée de la relation commerciale, puis 3 ans</li>
+          <li><strong>Messages de contact :</strong> 3 ans à compter du dernier échange</li>
           <li><strong>Données comptables :</strong> 10 ans (obligation légale)</li>
-          <li><strong>Cookies analytiques :</strong> 13 mois maximum</li>
+          <li><strong>Choix relatif aux cookies :</strong> 13 mois maximum</li>
         </ul>
         <h2>6. Vos droits</h2>
         <p>Conformément aux articles 15 à 22 du RGPD, vous disposez des droits suivants :</p>
@@ -515,12 +530,12 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:70px 0 
           <li><strong>Droit d'opposition :</strong> vous opposer à un traitement</li>
           <li><strong>Droit de retirer votre consentement</strong> à tout moment</li>
         </ul>
-        <p>Pour exercer ces droits, écrivez à <strong>dpo@proluxe.fr</strong> en joignant une pièce d'identité. Une réponse vous sera apportée sous 1 mois maximum.</p>
+        <p>Pour exercer ces droits, écrivez à <strong><span data-co="privacyEmail"></span></strong> en joignant une pièce d'identité. Une réponse vous sera apportée sous 1 mois maximum.</p>
         <h2>7. Réclamation</h2>
         <p>Si vous estimez que vos droits ne sont pas respectés, vous pouvez adresser une réclamation à la <strong>CNIL</strong> :<br>3 Place de Fontenoy, TSA 80715, 75334 Paris Cedex 07<br>Site : <a href="https://www.cnil.fr" target="_blank" rel="noopener">cnil.fr</a></p>
         <h2>8. Sécurité</h2>
         <p>Nous mettons en œuvre les mesures techniques et organisationnelles appropriées pour garantir un niveau de sécurité adapté au risque : chiffrement SSL/TLS, pare-feu, contrôle d'accès, sauvegardes régulières, sensibilisation des collaborateurs.</p>
-        <p style="margin-top:30px;font-size:12px;color:var(--muted)">Dernière mise à jour : novembre 2025</p>
+        <p style="margin-top:30px;font-size:12px;color:var(--muted)">Dernière mise à jour : novembre 2026</p>
       </div>
     </div>
   </section>
@@ -530,7 +545,7 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:70px 0 
       <div class="eyebrow">Traceurs</div>
       <h1>Politique cookies</h1>
       <div class="static-content">
-        <p><em>Conformément aux lignes directrices de la CNIL et à l'article 82 de la loi Informatique et Libertés, cette politique détaille l'usage des cookies sur proluxe.fr.</em></p>
+        <p><em>Conformément aux lignes directrices de la CNIL et à l'article 82 de la loi Informatique et Libertés, cette politique détaille l'usage des cookies sur <span data-co="domain"></span>.</em></p>
         <h2>Qu'est-ce qu'un cookie ?</h2>
         <p>Un cookie est un petit fichier texte déposé sur votre terminal lors de la visite d'un site. Il permet de reconnaître votre navigateur et de conserver certaines informations (panier, préférences, session).</p>
         <h2>Cookies utilisés sur Proluxe</h2>
@@ -547,7 +562,7 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:70px 0 
         <h2>Gérer vos préférences</h2>
         <p>Vous pouvez à tout moment modifier votre choix en cliquant sur le lien « Gérer les cookies » en bas de page, ou en supprimant les cookies via les paramètres de votre navigateur.</p>
         <p>Pour en savoir plus : <a href="https://www.cnil.fr/fr/cookies-et-autres-traceurs" target="_blank" rel="noopener">cnil.fr/fr/cookies-et-autres-traceurs</a></p>
-        <p style="margin-top:30px;font-size:12px;color:var(--muted)">Dernière mise à jour : novembre 2025</p>
+        <p style="margin-top:30px;font-size:12px;color:var(--muted)">Dernière mise à jour : novembre 2026</p>
       </div>
     </div>
   </section>
@@ -590,7 +605,7 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:70px 0 
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 Proluxe SAS — Tous droits réservés</span>
+      <span>© <span id="year">2026</span> <span data-co="name"></span> — Tous droits réservés</span>
       <span>
         <a data-nav="legal">Mentions</a> ·
         <a data-nav="cgv">CGV</a> ·
@@ -606,23 +621,61 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:70px 0 
 <aside class="drawer" id="cartDrawer">
   <div class="drawer-head">
     <h2>Votre panier</h2>
-    <button class="icon-btn" id="closeCart">✕</button>
+    <button class="icon-btn" id="closeCart" aria-label="Fermer le panier">✕</button>
   </div>
   <div class="drawer-body" id="cartItems"></div>
   <div class="drawer-foot" id="cartFoot"></div>
 </aside>
 
 <div class="cookie-banner" id="cookieBanner">
-  <p>Nous utilisons des cookies pour assurer le fonctionnement du site (panier, session) et, avec votre accord, pour mesurer l'audience. <a data-nav="cookies">En savoir plus</a></p>
+  <p>Ce site utilise uniquement des traceurs nécessaires à son fonctionnement (panier, préférences). Aucun cookie publicitaire ni de mesure d'audience. <a data-nav="cookies">En savoir plus</a></p>
   <div class="cookie-btns">
-    <button class="refuse" id="refuseCookies">Refuser</button>
-    <button class="accept" id="acceptCookies">Accepter</button>
+    <button class="accept" id="acceptCookies">J'ai compris</button>
   </div>
 </div>
 
-<div id="toast"></div>
+<div id="toast" role="status" aria-live="polite"></div>
 
 <script>
+/* =========================================================
+   INFORMATIONS DE L'ENTREPRISE — à compléter avec les vraies données.
+   Tout champ vide s'affiche « [À compléter] » sur le site.
+   ========================================================= */
+const COMPANY = {
+  name:'',          // ex. « Proluxe SAS »
+  legalForm:'',     // ex. « Société par actions simplifiée »
+  capital:'',       // ex. « 10 000 € »
+  street:'',        // ex. « 12 rue Exemple »
+  city:'',          // ex. « 75001 Paris, France »
+  rcs:'',           // ex. « RCS Paris 123 456 789 »
+  siret:'',
+  vat:'',           // n° TVA intracommunautaire
+  ape:'',
+  director:'',      // directeur(rice) de la publication
+  phone:'',
+  email:'',
+  privacyEmail:'',  // laisser vide pour reprendre l'email de contact
+  mediator:'',      // nom, adresse et site du médiateur de la consommation
+  carriers:'',      // ex. « Colissimo (La Poste) »
+  domain:''         // ex. « proluxe.fr » (vide = adresse actuelle du site)
+};
+const LABELS = {name:'raison sociale',legalForm:'forme juridique',capital:'capital social',street:'adresse',city:'code postal et ville',rcs:'immatriculation RCS',siret:'SIRET',vat:'n° TVA',ape:'code APE',director:'directeur de la publication',phone:'téléphone',email:'email',privacyEmail:'email données personnelles',mediator:'médiateur de la consommation',carriers:'transporteurs',domain:'nom de domaine'};
+/* Passer à false une fois le vrai paiement en ligne branché */
+const DEMO_MODE = true;
+
+const esc = v => String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function applyCompany(){
+  const vals = {...COMPANY};
+  if(!vals.privacyEmail) vals.privacyEmail = vals.email;
+  if(!vals.domain) vals.domain = location.host;
+  document.querySelectorAll('[data-co]').forEach(el=>{
+    const k = el.dataset.co, v = vals[k];
+    el.innerHTML = v ? esc(v) : `<em class="todo">[À compléter : ${LABELS[k]||k}]</em>`;
+  });
+  $('year').textContent = new Date().getFullYear();
+  $('demoBar').hidden = !DEMO_MODE;
+}
+
 const PRODUCTS = [
   {id:1,name:"Montre Aurore Or",cat:"Montres",price:2450,oldPrice:2900,tag:"Best-seller",img:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=80",desc:"Un boîtier doré à l'or fin, un cadran soleillé et un bracelet en cuir véritable. L'élégance intemporelle signée Proluxe.",details:["Boîtier acier plaqué or 18 carats","Mouvement automatique suisse","Étanche 50 m","Garantie 5 ans"]},
   {id:2,name:"Montre Squelette Noire",cat:"Montres",price:3900,tag:"Nouveau",img:"https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=800&q=80",desc:"Un mécanisme apparent d'une précision extrême, habillé d'un boîtier en acier noir mat. Pour les amateurs d'horlogerie contemporaine.",details:["Mouvement squelette automatique","Boîtier acier PVD noir","Verre saphir anti-reflet","Garantie 5 ans"]},
@@ -651,7 +704,7 @@ const CATEGORIES = [
 
 const state = {
   view:'home',
-  cart:JSON.parse(localStorage.getItem('proluxe_cart')||'[]'),
+  cart:(()=>{try{return JSON.parse(localStorage.getItem('proluxe_cart')||'[]').filter(i=>PRODUCTS.some(p=>p.id===i.id)&&i.qty>0);}catch{return [];}})(),
   promo:localStorage.getItem('proluxe_promo')||null,
   filters:{cat:'Tous',sort:'featured',search:''},
   currentProduct:null,
@@ -679,9 +732,30 @@ function computeTotals(){
   return {subtotal,discount,shipping,total:afterD+shipping};
 }
 
-function goTo(view,data){
+const VIEWS = ['home','shop','product','checkout','confirm','history','craft','contact','legal','cgv','privacy','cookies'];
+const TITLES = {home:'Maison de Luxe',shop:'La Boutique',checkout:'Commande',confirm:'Commande confirmée',history:'Notre histoire',craft:'Savoir-faire',contact:'Contact',legal:'Mentions légales',cgv:'Conditions générales de vente',privacy:'Politique de confidentialité',cookies:'Politique cookies'};
+function hashFor(view,data){
+  if(view==='home') return '#/';
+  if(view==='product' && data) return '#/produit/'+data.id;
+  if(view==='shop' && state.filters.cat!=='Tous') return '#/boutique/'+encodeURIComponent(state.filters.cat);
+  return '#/'+({shop:'boutique',history:'histoire',craft:'savoir-faire',legal:'mentions-legales',cgv:'cgv',privacy:'confidentialite',cookies:'cookies',contact:'contact',checkout:'commande',confirm:'confirmation'}[view]||view);
+}
+function parseHash(){
+  const parts = location.hash.replace(/^#\/?/,'').split('/').map(decodeURIComponent);
+  const map = {'':'home',boutique:'shop',histoire:'history','savoir-faire':'craft','mentions-legales':'legal',cgv:'cgv',confidentialite:'privacy',cookies:'cookies',contact:'contact',commande:'checkout',confirmation:'confirm'};
+  if(parts[0]==='produit'){ const p=getProduct(+parts[1]); return p?{view:'product',data:p}:{view:'shop'}; }
+  const view = map[parts[0]]||'home';
+  if(view==='shop') state.filters.cat = CATEGORIES.some(c=>c.name===parts[1]) ? parts[1] : 'Tous';
+  return {view};
+}
+function goTo(view,data,fromHash){
+  if(!VIEWS.includes(view)) view='home';
+  if(view==='checkout' && state.cart.length===0 && state.checkoutStep!==2) view='shop';
   state.view = view;
   if(view==='product') state.currentProduct = data;
+  const h = hashFor(view,data);
+  if(!fromHash && location.hash!==h) history.pushState(null,'',h);
+  document.title = (view==='product'&&data ? data.name : TITLES[view]) + ' — Proluxe';
   document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
   const target = $('view-'+view);
   if(target) target.classList.add('active');
@@ -703,10 +777,12 @@ document.addEventListener('click',e=>{
   const nav = e.target.closest('[data-nav]');
   if(nav){
     e.preventDefault();
-    if(nav.dataset.cat) state.filters.cat = nav.dataset.cat;
+    if(nav.dataset.nav==='shop') state.filters.cat = nav.dataset.cat || 'Tous';
     goTo(nav.dataset.nav);
   }
 });
+window.addEventListener('popstate',()=>{ const r=parseHash(); goTo(r.view,r.data,true); });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeCart(); });
 
 function productCardHTML(p){
   return `<div class="p-card" data-id="${p.id}">
@@ -747,12 +823,13 @@ function renderHome(){
 function renderShop(){
   const pills = ['Tous',...CATEGORIES.map(c=>c.name)];
   $('shopPills').innerHTML = pills.map(c=>`<button class="pill ${state.filters.cat===c?'active':''}" data-cat="${c}">${c}</button>`).join('');
-  $('shopPills').querySelectorAll('.pill').forEach(b=>{b.onclick=()=>{state.filters.cat=b.dataset.cat;renderShop();};});
+  $('shopPills').querySelectorAll('.pill').forEach(b=>{b.onclick=()=>{state.filters.cat=b.dataset.cat;history.replaceState(null,'',hashFor('shop'));renderShop();};});
   $('shopSearch').value = state.filters.search;
   $('shopSort').value = state.filters.sort;
   let list = PRODUCTS.filter(p=>{
     const catOk = state.filters.cat==='Tous'||p.cat===state.filters.cat;
-    const searchOk = p.name.toLowerCase().includes(state.filters.search.toLowerCase());
+    const q = state.filters.search.toLowerCase().trim();
+    const searchOk = !q || (p.name+' '+p.cat+' '+p.desc).toLowerCase().includes(q);
     return catOk && searchOk;
   });
   switch(state.filters.sort){
@@ -793,7 +870,7 @@ function renderProduct(){
     </div>`;
   let qty = 1;
   $('qMinus').onclick = ()=>{if(qty>1){qty--;$('qVal').textContent=qty;}};
-  $('qPlus').onclick = ()=>{qty++;$('qVal').textContent=qty;};
+  $('qPlus').onclick = ()=>{if(qty<MAX_QTY){qty++;$('qVal').textContent=qty;}};
   $('addBtn').onclick = ()=>addToCart(p.id,qty);
   const related = PRODUCTS.filter(x=>x.cat===p.cat&&x.id!==p.id).slice(0,4);
   const fill = [...related,...PRODUCTS.filter(x=>x.id!==p.id)].slice(0,4);
@@ -802,9 +879,11 @@ function renderProduct(){
   bindProductCards(rel);
 }
 
+const MAX_QTY = 10;
 function addToCart(id,qty){
   const item = state.cart.find(i=>i.id===id);
-  if(item) item.qty += qty;
+  if(item && item.qty>=MAX_QTY) return toast(`Quantité maximale atteinte (${MAX_QTY})`);
+  if(item) item.qty = Math.min(MAX_QTY,item.qty+qty);
   else state.cart.push({id,qty});
   saveCart(); updateCartUI();
   toast(`${getProduct(id).name} ajouté au panier`);
@@ -812,7 +891,7 @@ function addToCart(id,qty){
 function changeQty(id,delta){
   const item = state.cart.find(i=>i.id===id);
   if(!item) return;
-  item.qty += delta;
+  item.qty = Math.min(MAX_QTY,item.qty+delta);
   if(item.qty<=0) state.cart = state.cart.filter(i=>i.id!==id);
   saveCart(); updateCartUI();
 }
@@ -834,10 +913,10 @@ function updateCartUI(){
           <h4>${p.name}</h4>
           <div class="ci-price">${fmt(p.price)}</div>
           <div class="ci-qty">
-            <button data-minus="${p.id}">−</button><span>${it.qty}</span><button data-plus="${p.id}">+</button>
+            <button data-minus="${p.id}" aria-label="Diminuer">−</button><span>${it.qty}</span><button data-plus="${p.id}" aria-label="Augmenter">+</button>
           </div>
         </div>
-        <button class="ci-remove" data-remove="${p.id}">✕</button>
+        <button class="ci-remove" data-remove="${p.id}" aria-label="Retirer ${p.name}">✕</button>
       </div>`;
     }).join('');
     body.querySelectorAll('[data-minus]').forEach(b=>b.onclick=()=>changeQty(+b.dataset.minus,-1));
@@ -846,7 +925,7 @@ function updateCartUI(){
   }
   $('cartFoot').innerHTML = `
     <div class="promo-row">
-      <input type="text" id="promoInput" placeholder="Code promo" value="${state.promo||''}">
+      <input type="text" id="promoInput" placeholder="Code promo" aria-label="Code promo" value="${esc(state.promo||'')}">
       <button id="promoBtn">${state.promo?'Retirer':'Appliquer'}</button>
     </div>
     <div class="sum-row"><span>Sous-total</span><span>${fmt(t.subtotal)}</span></div>
@@ -854,7 +933,7 @@ function updateCartUI(){
     <div class="sum-row"><span>Livraison</span><span>${t.shipping===0?'Offerte':fmt(t.shipping)}</span></div>
     <div class="sum-row total"><span>Total</span><span>${fmt(t.total)}</span></div>
     <button class="btn btn-block" id="checkoutBtn" ${state.cart.length===0?'disabled':''}>Passer commande</button>
-    <p style="text-align:center;font-size:11px;color:var(--muted);margin-top:12px">Livraison offerte dès 500 € · Code : PROLUXE10</p>`;
+    <p style="text-align:center;font-size:11px;color:var(--muted);margin-top:12px">Livraison offerte dès 500 € · Paiement sécurisé · Retours sous 14 jours</p>`;
   $('promoBtn').onclick = ()=>{
     if(state.promo){ state.promo=null; saveCart(); updateCartUI(); toast('Code promo retiré'); return; }
     const code = $('promoInput').value.trim().toUpperCase();
@@ -911,15 +990,15 @@ function renderCheckout(){
     content = `<div class="form-section">
       <h2>Adresse de livraison</h2>
       <div class="field-row">
-        <div class="field"><label>Prénom *</label><input type="text" id="f_first" value="${d.first||''}"></div>
-        <div class="field"><label>Nom *</label><input type="text" id="f_last" value="${d.last||''}"></div>
+        <div class="field"><label>Prénom *</label><input type="text" id="f_first" autocomplete="given-name" value="${esc(d.first)}"></div>
+        <div class="field"><label>Nom *</label><input type="text" id="f_last" autocomplete="family-name" value="${esc(d.last)}"></div>
       </div>
-      <div class="field"><label>Email *</label><input type="email" id="f_email" value="${d.email||''}"></div>
-      <div class="field"><label>Téléphone</label><input type="tel" id="f_phone" value="${d.phone||''}"></div>
-      <div class="field"><label>Adresse *</label><input type="text" id="f_addr" value="${d.addr||''}"></div>
+      <div class="field"><label>Email *</label><input type="email" id="f_email" autocomplete="email" value="${esc(d.email)}"></div>
+      <div class="field"><label>Téléphone</label><input type="tel" id="f_phone" autocomplete="tel" value="${esc(d.phone)}"></div>
+      <div class="field"><label>Adresse *</label><input type="text" id="f_addr" autocomplete="street-address" value="${esc(d.addr)}"></div>
       <div class="field-row">
-        <div class="field"><label>Code postal *</label><input type="text" id="f_zip" value="${d.zip||''}"></div>
-        <div class="field"><label>Ville *</label><input type="text" id="f_city" value="${d.city||''}"></div>
+        <div class="field"><label>Code postal *</label><input type="text" id="f_zip" autocomplete="postal-code" value="${esc(d.zip)}"></div>
+        <div class="field"><label>Ville *</label><input type="text" id="f_city" autocomplete="address-level2" value="${esc(d.city)}"></div>
       </div>
       <div class="field"><label>Pays *</label>
         <select id="f_country">
@@ -939,23 +1018,22 @@ function renderCheckout(){
       <h2>Confirmez votre commande</h2>
       <div style="background:var(--card);border:1px solid var(--border);border-radius:4px;padding:22px;margin-bottom:20px;font-size:13px;line-height:1.9">
         <div style="color:var(--gold);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px">Livraison à</div>
-        ${d.first} ${d.last}<br>${d.addr}<br>${d.zip} ${d.city}, ${d.country}<br>${d.email}
+        ${esc(d.first)} ${esc(d.last)}<br>${esc(d.addr)}<br>${esc(d.zip)} ${esc(d.city)}, ${esc(d.country)}<br>${esc(d.email)}
       </div>
       <div style="background:var(--card);border:1px solid var(--border);border-radius:4px;padding:22px;margin-bottom:20px">
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
           <span style="font-size:22px">🔒</span>
           <div>
-            <div style="font-weight:600">Paiement sécurisé (démo)</div>
-            <div style="font-size:12px;color:var(--muted)">Aucun débit réel — commande simulée</div>
+            <div style="font-weight:600">Paiement sécurisé${DEMO_MODE?' · mode démonstration':''}</div>
+            <div style="font-size:12px;color:var(--muted)">${DEMO_MODE?'Boutique en démonstration : aucune carte ne sera débitée.':'Carte bancaire · Visa, Mastercard, American Express'}</div>
           </div>
         </div>
-        <p style="font-size:12px;color:var(--muted)">Pour activer le vrai paiement Stripe, il faudra ajouter les fonctions backend Netlify (voir avec le développeur).</p>
       </div>
+      <label class="check-row"><input type="checkbox" id="cgvCheck"><span>J'ai lu et j'accepte les <a data-nav="cgv">Conditions générales de vente</a> et la <a data-nav="privacy">politique de confidentialité</a>. *</span></label>
       <div class="nav-btns">
         <button class="btn btn-outline" id="backStep1">Retour</button>
-        <button class="btn" id="payBtn">Confirmer la commande ${fmt(t.total)}</button>
+        <button class="btn" id="payBtn">${DEMO_MODE?'Simuler la commande':'Commander avec obligation de paiement'} · ${fmt(t.total)}</button>
       </div>
-      <p style="text-align:center;font-size:11px;color:var(--muted);margin-top:14px">En validant, vous acceptez nos <a data-nav="cgv" style="color:var(--gold);text-decoration:underline">CGV</a></p>
     </div>`;
   }
 
@@ -974,13 +1052,15 @@ function renderCheckout(){
         return toast('Merci de remplir tous les champs obligatoires');
       if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))
         return toast('Adresse email invalide');
+      if(data.country==='France' && !/^\d{5}$/.test(data.zip))
+        return toast('Code postal invalide');
       Object.assign(state.checkoutData,data);
       state.checkoutStep = 2;
       renderCheckout();
     };
   } else {
     $('backStep1').onclick = ()=>{state.checkoutStep=1;renderCheckout();};
-    $('payBtn').onclick = placeOrder;
+    $('payBtn').onclick = ()=>{ if(!$('cgvCheck').checked) return toast('Merci d\'accepter les CGV pour continuer'); placeOrder(); };
   }
 }
 
@@ -1000,6 +1080,7 @@ function placeOrder(){
     state.cart = [];
     state.promo = null;
     saveCart(); updateCartUI();
+    state.checkoutStep = 1;
     goTo('confirm');
   }, 1200);
 }
@@ -1010,7 +1091,7 @@ function renderConfirm(){
   $('confirmContent').innerHTML = `
     <div style="width:84px;height:84px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:38px;color:var(--gold);margin:0 auto 30px">✓</div>
     <h1 style="font-size:38px;margin-bottom:16px">Merci pour votre commande</h1>
-    <p style="color:var(--muted);font-weight:300;margin-bottom:34px">Un email de confirmation vous sera envoyé à <strong style="color:var(--gold)">${o.customer.email}</strong>.<br>Votre commande sera expédiée sous 48 h.</p>
+    <p style="color:var(--muted);font-weight:300;margin-bottom:34px">${DEMO_MODE?'Ceci est une commande de démonstration : aucun paiement n\'a été effectué et rien ne sera expédié.':`Un email de confirmation vous sera envoyé à <strong style="color:var(--gold)">${esc(o.customer.email)}</strong>.<br>Votre commande sera expédiée sous 48 h.`}</p>
     <div style="background:var(--card);border:1px solid var(--border);border-radius:4px;padding:28px;text-align:left;margin-bottom:34px">
       <h3 style="font-size:15px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:20px">Commande n° ${o.number}</h3>
       <div style="font-size:13px;color:var(--muted);margin-bottom:18px">Passée le ${o.date}</div>
@@ -1022,10 +1103,10 @@ function renderConfirm(){
       <div class="sum-row"><span>Sous-total</span><span>${fmt(o.totals.subtotal)}</span></div>
       ${o.totals.discount?`<div class="sum-row discount"><span>Remise</span><span>−${fmt(o.totals.discount)}</span></div>`:''}
       <div class="sum-row"><span>Livraison</span><span>${o.totals.shipping===0?'Offerte':fmt(o.totals.shipping)}</span></div>
-      <div class="sum-row total"><span>Total payé</span><span>${fmt(o.totals.total)}</span></div>
+      <div class="sum-row total"><span>${DEMO_MODE?'Total':'Total payé'}</span><span>${fmt(o.totals.total)}</span></div>
       <div style="font-size:12px;color:var(--muted);margin-top:16px;line-height:1.8">
         <strong style="color:var(--text)">Livraison à :</strong><br>
-        ${o.customer.first} ${o.customer.last}<br>${o.customer.addr}<br>${o.customer.zip} ${o.customer.city}, ${o.customer.country}
+        ${esc(o.customer.first)} ${esc(o.customer.last)}<br>${esc(o.customer.addr)}<br>${esc(o.customer.zip)} ${esc(o.customer.city)}, ${esc(o.customer.country)}
       </div>
     </div>
     <button class="btn" data-nav="shop">Continuer mes achats</button>
@@ -1035,20 +1116,30 @@ function renderConfirm(){
 function initCookies(){
   if(!localStorage.getItem('proluxe_cookies')) $('cookieBanner').classList.add('show');
 }
-$('acceptCookies').onclick = ()=>{localStorage.setItem('proluxe_cookies','accepted');$('cookieBanner').classList.remove('show');toast('Préférences enregistrées');};
-$('refuseCookies').onclick = ()=>{localStorage.setItem('proluxe_cookies','refused');$('cookieBanner').classList.remove('show');toast('Cookies non essentiels refusés');};
-$('manageCookies').onclick = ()=>{localStorage.removeItem('proluxe_cookies');$('cookieBanner').classList.add('show');};
+$('acceptCookies').onclick = ()=>{localStorage.setItem('proluxe_cookies','accepted');$('cookieBanner').classList.remove('show');};
+$('manageCookies').onclick = ()=>$('cookieBanner').classList.add('show');
 $('menuBtn').onclick = ()=>$('mobileNav').classList.toggle('open');
 
-$('contactForm')?.addEventListener('submit',e=>{
+$('contactForm').addEventListener('submit',async e=>{
   e.preventDefault();
-  toast('Message envoyé ! Nous vous répondrons sous 24h.');
-  e.target.reset();
+  const form = e.target, btn = $('contactBtn');
+  btn.disabled = true; btn.textContent = 'Envoi en cours…';
+  try{
+    const res = await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(form)).toString()});
+    if(!res.ok) throw new Error(res.status);
+    form.reset();
+    toast('Message envoyé ! Nous vous répondrons sous 24h ouvrées.');
+  }catch(err){
+    toast('L\'envoi a échoué. Merci de réessayer ou de nous écrire par email.');
+  }finally{
+    btn.disabled = false; btn.textContent = 'Envoyer le message';
+  }
 });
 
+applyCompany();
 updateCartUI();
-renderHome();
 initCookies();
+{ const r = parseHash(); goTo(r.view,r.data,true); history.replaceState(null,'',hashFor(state.view,state.currentProduct)); }
 </script>
 </body>
 </html>
