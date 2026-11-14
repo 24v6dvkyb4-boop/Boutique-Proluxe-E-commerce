@@ -3,16 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Proluxe — Maison de Luxe</title>
+<title>Proluxe — Maison de Luxe · Paris depuis 1987</title>
+<meta name="description" content="Proluxe, maison de luxe française depuis 1987. Montres, maroquinerie, bijoux, parfums et lunettes d'exception façonnés à la main.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --gold:#c9a961; --gold-l:#e5cf9a; --black:#0a0a0a; --dark:#111111;
-  --card:#161616; --border:#262626; --text:#e8e6e1; --muted:#8a8a8a;
-  --danger:#e05252; --success:#4caf7d;
-}
+:root{--gold:#c9a961;--gold-l:#e5cf9a;--black:#0a0a0a;--dark:#111;--card:#161616;--border:#262626;--text:#e8e6e1;--muted:#8a8a8a;--danger:#e05252;--success:#4caf7d}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--black);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -21,34 +18,28 @@ a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer}
 img{display:block;max-width:100%}
 .container{max-width:1280px;margin:0 auto;padding:0 24px}
-
-/* HEADER */
 header{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
 .header-inner{max-width:1280px;margin:0 auto;padding:0 24px;height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .nav-left{display:flex;gap:26px;font-size:13px;letter-spacing:1.5px;text-transform:uppercase}
-.nav-left a{color:var(--muted);transition:.2s;cursor:pointer;position:relative}
+.nav-left a{color:var(--muted);transition:.2s;cursor:pointer}
 .nav-left a:hover{color:var(--gold)}
-.brand{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;letter-spacing:6px;color:var(--text);cursor:pointer;white-space:nowrap}
+.brand{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;letter-spacing:6px;cursor:pointer;white-space:nowrap}
 .brand span{color:var(--gold)}
 .nav-right{display:flex;align-items:center;gap:14px}
 .icon-btn{background:none;border:1px solid var(--border);color:var(--text);width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;transition:.2s}
 .icon-btn:hover{border-color:var(--gold);color:var(--gold)}
 .cart-btn{background:none;border:1px solid var(--gold);color:var(--gold);padding:10px 20px;border-radius:30px;font-size:12px;letter-spacing:2px;text-transform:uppercase;display:flex;align-items:center;gap:9px;transition:.25s}
 .cart-btn:hover{background:var(--gold);color:var(--black)}
-.badge{background:var(--gold);color:var(--black);font-size:11px;font-weight:700;min-width:19px;height:19px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;padding:0 5px;transition:.25s}
+.badge{background:var(--gold);color:var(--black);font-size:11px;font-weight:700;min-width:19px;height:19px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;padding:0 5px}
 .cart-btn:hover .badge{background:var(--black);color:var(--gold)}
 .mobile-only{display:none}
 .mobile-nav{display:none;background:var(--dark);border-bottom:1px solid var(--border);padding:16px 24px;flex-direction:column;gap:14px}
 .mobile-nav.open{display:flex}
 .mobile-nav a{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);cursor:pointer}
 .mobile-nav a:hover{color:var(--gold)}
-
-/* VIEWS */
 .view{display:none}
 .view.active{display:block;animation:fade .35s ease}
 @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-
-/* HERO */
 .hero{position:relative;height:78vh;min-height:520px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600&q=80') center/cover no-repeat;filter:brightness(.42)}
 .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,.3),rgba(10,10,10,.85))}
@@ -62,27 +53,21 @@ header{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.92);backdrop-
 .btn-outline:hover{background:var(--gold);color:var(--black)}
 .btn-block{width:100%;display:block;text-align:center}
 .btn:disabled{opacity:.35;cursor:not-allowed;transform:none}
-
-/* SECTION */
 .section{padding:80px 0}
 .section-head{text-align:center;margin-bottom:52px}
 .section-head .eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
 .section-head h2{font-size:clamp(28px,4vw,42px)}
 .section-head p{color:var(--muted);max-width:500px;margin:14px auto 0;font-weight:300;font-size:14px}
-
-/* CATEGORIES */
 .cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
 .cat-card{position:relative;height:260px;border-radius:4px;overflow:hidden;cursor:pointer}
-.cat-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;filter:brightness(.55)}
+.cat-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s;filter:brightness(.55)}
 .cat-card:hover img{transform:scale(1.08);filter:brightness(.75)}
-.cat-card span{position:absolute;bottom:22px;left:22px;font-family:'Playfair Display',serif;font-size:22px;font-weight:600;letter-spacing:1px}
+.cat-card span{position:absolute;bottom:22px;left:22px;font-family:'Playfair Display',serif;font-size:22px;font-weight:600;z-index:1}
 .cat-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,.8),transparent 60%)}
-
-/* PRODUCT GRID */
 .p-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:26px}
-.p-card{cursor:pointer;group:card}
+.p-card{cursor:pointer}
 .p-img{position:relative;overflow:hidden;border-radius:4px;background:var(--card);aspect-ratio:1/1.15}
-.p-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.p-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
 .p-card:hover .p-img img{transform:scale(1.06)}
 .p-tag{position:absolute;top:12px;left:12px;background:var(--gold);color:var(--black);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 11px;border-radius:2px}
 .p-quick{position:absolute;bottom:12px;left:12px;right:12px;background:rgba(10,10,10,.88);border:1px solid var(--gold);color:var(--gold);padding:11px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;opacity:0;transform:translateY(10px);transition:.3s;border-radius:2px}
@@ -90,11 +75,9 @@ header{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.92);backdrop-
 .p-quick:hover{background:var(--gold);color:var(--black)}
 .p-info{padding:16px 4px 0}
 .p-cat{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
-.p-info h3{font-size:16px;margin:6px 0 8px;font-weight:400;font-family:'Inter',sans-serif;letter-spacing:.3px}
+.p-info h3{font-size:16px;margin:6px 0 8px;font-weight:400;font-family:'Inter',sans-serif}
 .p-price{font-size:15px;font-weight:600;color:var(--gold)}
 .p-price s{color:var(--muted);font-weight:400;font-size:13px;margin-left:8px}
-
-/* SHOP */
 .shop-header{padding:60px 0 30px;text-align:center;border-bottom:1px solid var(--border)}
 .shop-header h1{font-size:clamp(30px,5vw,46px)}
 .shop-header p{color:var(--muted);font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-top:10px}
@@ -104,13 +87,11 @@ header{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.92);backdrop-
 .pill:hover{border-color:var(--gold);color:var(--gold)}
 .pill.active{background:var(--gold);border-color:var(--gold);color:var(--black);font-weight:600}
 .toolbar-right{display:flex;gap:12px;flex-wrap:wrap}
-select,input[type=text],input[type=email],input[type=tel],input[type=password]{background:var(--card);border:1px solid var(--border);color:var(--text);padding:11px 15px;border-radius:3px;font-family:inherit;font-size:13px;outline:none;transition:.2s}
-select:focus,input:focus{border-color:var(--gold)}
+select,input[type=text],input[type=email],input[type=tel],input[type=password],textarea{background:var(--card);border:1px solid var(--border);color:var(--text);padding:11px 15px;border-radius:3px;font-family:inherit;font-size:13px;outline:none;transition:.2s;width:100%}
+select:focus,input:focus,textarea:focus{border-color:var(--gold)}
 select{cursor:pointer;min-width:170px}
 .shop-search{min-width:220px}
 .shop-count{font-size:12px;color:var(--muted);margin-bottom:22px;letter-spacing:1px}
-
-/* PRODUCT DETAIL */
 .breadcrumb{padding:28px 0;font-size:12px;color:var(--muted);letter-spacing:1px}
 .breadcrumb span{cursor:pointer;transition:.2s}
 .breadcrumb span:hover{color:var(--gold)}
@@ -118,7 +99,6 @@ select{cursor:pointer;min-width:170px}
 .product-image{border-radius:4px;overflow:hidden;background:var(--card);aspect-ratio:1/1.1}
 .product-image img{width:100%;height:100%;object-fit:cover}
 .product-info h1{font-size:clamp(26px,3.5vw,38px);margin:14px 0 10px}
-.product-info .p-cat{font-size:11px}
 .product-price{font-size:26px;color:var(--gold);font-weight:600;margin:16px 0 22px;font-family:'Playfair Display',serif}
 .product-price s{font-size:16px;color:var(--muted);font-weight:400;margin-left:12px}
 .product-desc{color:#b5b5b5;font-weight:300;font-size:15px;margin-bottom:28px;line-height:1.8}
@@ -132,8 +112,6 @@ select{cursor:pointer;min-width:170px}
 .product-details ul{list-style:none;font-size:14px;color:#b5b5b5;font-weight:300}
 .product-details li{padding:7px 0;border-bottom:1px solid #1c1c1c}
 .product-details li::before{content:'—';color:var(--gold);margin-right:10px}
-
-/* CART DRAWER */
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);opacity:0;pointer-events:none;transition:.3s;z-index:200}
 .overlay.open{opacity:1;pointer-events:auto}
 .drawer{position:fixed;top:0;right:0;width:min(430px,100%);height:100%;background:var(--dark);border-left:1px solid var(--border);z-index:201;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column}
@@ -145,7 +123,7 @@ select{cursor:pointer;min-width:170px}
 .cart-item img{width:70px;height:84px;object-fit:cover;border-radius:3px}
 .ci-info{flex:1}
 .ci-info h4{font-size:14px;font-weight:400;font-family:'Inter',sans-serif}
-.ci-info .ci-price{font-size:13px;color:var(--gold);margin-top:4px}
+.ci-price{font-size:13px;color:var(--gold);margin-top:4px}
 .ci-qty{display:flex;align-items:center;gap:8px;margin-top:8px}
 .ci-qty button{background:var(--card);border:none;color:var(--text);width:24px;height:24px;border-radius:3px;font-size:13px}
 .ci-qty button:hover{background:var(--gold);color:var(--black)}
@@ -161,8 +139,6 @@ select{cursor:pointer;min-width:170px}
 .sum-row.discount{color:var(--success)}
 .sum-row.total{font-size:19px;color:var(--text);font-weight:600;margin:14px 0 18px;padding-top:14px;border-top:1px solid var(--border);font-family:'Playfair Display',serif}
 .empty-cart{text-align:center;color:var(--muted);font-size:14px;padding:60px 0;font-weight:300}
-
-/* CHECKOUT */
 .checkout-wrap{padding:50px 0 80px}
 .stepper{display:flex;justify-content:center;gap:8px;margin-bottom:48px;flex-wrap:wrap}
 .step{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:12px;letter-spacing:1.5px;text-transform:uppercase}
@@ -176,29 +152,32 @@ select{cursor:pointer;min-width:170px}
 .form-section h2{font-size:24px;margin-bottom:24px}
 .field{margin-bottom:16px}
 .field label{display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
-.field input,.field select{width:100%}
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .summary-box{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:26px;position:sticky;top:100px}
 .summary-box h3{font-size:17px;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border)}
 .summary-item{display:flex;gap:12px;margin-bottom:14px;align-items:center}
 .summary-item img{width:48px;height:58px;object-fit:cover;border-radius:2px}
-.summary-item .si-t{flex:1;font-size:12px}
-.summary-item .si-t small{display:block;color:var(--muted);margin-top:2px}
-.summary-item .si-p{font-size:13px;color:var(--gold)}
+.si-t{flex:1;font-size:12px}
+.si-t small{display:block;color:var(--muted);margin-top:2px}
+.si-p{font-size:13px;color:var(--gold)}
 .nav-btns{display:flex;gap:14px;margin-top:28px}
 .nav-btns .btn{flex:1;padding:15px}
-
-/* CONFIRM */
-.confirm-wrap{padding:90px 0;text-align:center;max-width:640px;margin:0 auto}
-.confirm-check{width:84px;height:84px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:38px;color:var(--gold);margin:0 auto 30px}
-.confirm-wrap h1{font-size:38px;margin-bottom:16px}
-.confirm-wrap p{color:var(--muted);font-weight:300;margin-bottom:34px}
-.order-box{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:28px;text-align:left;margin-bottom:34px}
-.order-box h3{font-size:15px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
-
-/* FOOTER */
+.static-page{padding:60px 0 80px;max-width:900px;margin:0 auto}
+.static-page h1{font-size:clamp(32px,5vw,48px);margin-bottom:30px}
+.static-page .eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.static-content{font-size:15px;line-height:1.9;color:#b5b5b5;font-weight:300}
+.static-content h2{font-size:22px;color:var(--text);margin:36px 0 14px;font-family:'Playfair Display',serif}
+.static-content h3{font-size:16px;color:var(--gold);margin:24px 0 10px;font-family:'Inter',sans-serif;letter-spacing:1px;text-transform:uppercase;font-weight:600}
+.static-content p{margin-bottom:16px}
+.static-content ul{margin:0 0 16px 22px}
+.static-content li{margin-bottom:8px}
+.static-content a{color:var(--gold);text-decoration:underline}
+.contact-card{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:30px;margin-bottom:24px}
+.contact-card h3{font-size:18px;margin-bottom:20px;color:var(--gold);font-family:'Playfair Display',serif}
+.contact-card p{font-size:14px;color:#b5b5b5;margin-bottom:8px}
+.contact-card .big{font-size:20px;font-weight:600;color:var(--text);margin-bottom:10px}
 footer{background:var(--dark);border-top:1px solid var(--border);padding:70px 0 30px;margin-top:40px}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:50px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:50px}
 .footer-grid h4{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;font-family:'Inter',sans-serif;font-weight:600}
 .footer-grid ul{list-style:none;display:flex;flex-direction:column;gap:11px;font-size:13px;color:var(--muted)}
 .footer-grid li{cursor:pointer;transition:.2s}
@@ -206,41 +185,25 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:70px 0 
 .footer-brand{font-family:'Playfair Display',serif;font-size:24px;letter-spacing:5px;margin-bottom:14px}
 .footer-brand span{color:var(--gold)}
 .footer-about{color:var(--muted);font-size:13px;font-weight:300;max-width:280px}
-.newsletter{display:flex;gap:8px;margin-top:14px}
-.newsletter input{flex:1;min-width:0}
-.newsletter button{background:var(--gold);border:none;color:var(--black);padding:0 18px;font-size:11px;letter-spacing:1px;font-weight:700;text-transform:uppercase;border-radius:3px}
 .footer-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--muted)}
-
-/* TOAST */
-#toast{position:fixed;bottom:30px;left:50%;transform:translate(-50%,80px);background:var(--gold);color:var(--black);padding:14px 28px;border-radius:3px;font-size:13px;font-weight:600;letter-spacing:.5px;z-index:400;opacity:0;transition:.35s;pointer-events:none;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.footer-bottom a{color:var(--muted);cursor:pointer}
+.footer-bottom a:hover{color:var(--gold)}
+#toast{position:fixed;bottom:30px;left:50%;transform:translate(-50%,80px);background:var(--gold);color:var(--black);padding:14px 28px;border-radius:3px;font-size:13px;font-weight:600;z-index:400;opacity:0;transition:.35s;pointer-events:none;box-shadow:0 10px 30px rgba(0,0,0,.5)}
 #toast.show{opacity:1;transform:translate(-50%,0)}
-
-/* RESPONSIVE */
-@media(max-width:900px){
-  .nav-left{display:none}
-  .mobile-only{display:flex}
-  .product-layout{grid-template-columns:1fr;gap:32px}
-  .checkout-grid{grid-template-columns:1fr}
-  .summary-box{position:static}
-  .footer-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:600px){
-  .header-inner{height:64px;padding:0 16px}
-  .container{padding:0 16px}
-  .brand{font-size:20px;letter-spacing:4px}
-  .cart-btn{padding:9px 14px;font-size:11px}
-  .section{padding:50px 0}
-  .hero{height:70vh}
-  .footer-grid{grid-template-columns:1fr}
-  .field-row{grid-template-columns:1fr}
-  .step:not(:last-child)::after{width:16px;margin:0 6px}
-  .step{font-size:10px}
-}
+.cookie-banner{position:fixed;bottom:0;left:0;right:0;background:var(--dark);border-top:1px solid var(--gold);padding:20px;z-index:500;display:none;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.cookie-banner.show{display:flex}
+.cookie-banner p{font-size:13px;color:var(--muted);flex:1;min-width:240px}
+.cookie-banner a{color:var(--gold);text-decoration:underline;cursor:pointer}
+.cookie-btns{display:flex;gap:10px}
+.cookie-btns button{padding:10px 22px;font-size:12px;letter-spacing:1px;text-transform:uppercase;border-radius:3px;font-weight:600}
+.cookie-btns .refuse{background:transparent;border:1px solid var(--border);color:var(--text)}
+.cookie-btns .accept{background:var(--gold);border:1px solid var(--gold);color:var(--black)}
+@media(max-width:900px){.nav-left{display:none}.mobile-only{display:flex}.product-layout{grid-template-columns:1fr;gap:32px}.checkout-grid{grid-template-columns:1fr}.summary-box{position:static}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.header-inner{height:64px;padding:0 16px}.container{padding:0 16px}.brand{font-size:20px;letter-spacing:4px}.cart-btn{padding:9px 14px;font-size:11px}.section{padding:50px 0}.hero{height:70vh}.footer-grid{grid-template-columns:1fr}.field-row{grid-template-columns:1fr}.step:not(:last-child)::after{width:16px;margin:0 6px}.step{font-size:10px}}
 </style>
 </head>
 <body>
 
-<!-- ================= HEADER ================= -->
 <header>
   <div class="header-inner">
     <button class="icon-btn mobile-only" id="menuBtn">☰</button>
@@ -250,6 +213,7 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:70px 0 
       <a data-nav="shop" data-cat="Bijoux">Bijoux</a>
       <a data-nav="shop" data-cat="Maroquinerie">Maroquinerie</a>
       <a data-nav="shop" data-cat="Parfums">Parfums</a>
+      <a data-nav="history">Maison</a>
     </nav>
     <div class="brand" data-nav="home">PRO<span>LUXE</span></div>
     <div class="nav-right">
@@ -264,11 +228,13 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:70px 0 
     <a data-nav="shop" data-cat="Maroquinerie">Maroquinerie</a>
     <a data-nav="shop" data-cat="Parfums">Parfums</a>
     <a data-nav="shop" data-cat="Lunettes">Lunettes</a>
+    <a data-nav="history">Notre histoire</a>
+    <a data-nav="craft">Savoir-faire</a>
+    <a data-nav="contact">Contact</a>
   </div>
 </header>
 
 <main>
-  <!-- ================= HOME ================= -->
   <section id="view-home" class="view active">
     <div class="hero">
       <div class="hero-bg"></div>
@@ -279,7 +245,6 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:70px 0 
         <button class="btn" data-nav="shop">Découvrir la collection</button>
       </div>
     </div>
-
     <div class="section container">
       <div class="section-head">
         <div class="eyebrow">Nos univers</div>
@@ -287,7 +252,6 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:70px 0 
       </div>
       <div class="cat-grid" id="homeCats"></div>
     </div>
-
     <div class="section container" style="padding-top:0">
       <div class="section-head">
         <div class="eyebrow">Sélection</div>
@@ -298,7 +262,6 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:70px 0 
     </div>
   </section>
 
-  <!-- ================= SHOP ================= -->
   <section id="view-shop" class="view">
     <div class="container">
       <div class="shop-header">
@@ -323,7 +286,6 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:70px 0 
     </div>
   </section>
 
-  <!-- ================= PRODUCT ================= -->
   <section id="view-product" class="view">
     <div class="container">
       <div class="breadcrumb" id="breadcrumb"></div>
@@ -338,20 +300,259 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:70px 0 
     </div>
   </section>
 
-  <!-- ================= CHECKOUT ================= -->
   <section id="view-checkout" class="view">
     <div class="container checkout-wrap">
       <div id="checkoutContent"></div>
     </div>
   </section>
 
-  <!-- ================= CONFIRM ================= -->
   <section id="view-confirm" class="view">
-    <div class="container confirm-wrap" id="confirmContent"></div>
+    <div class="container" style="padding:90px 0;text-align:center;max-width:640px">
+      <div id="confirmContent"></div>
+    </div>
+  </section>
+
+  <section id="view-history" class="view">
+    <div class="container static-page">
+      <div class="eyebrow">Notre Maison</div>
+      <h1>L'Histoire de Proluxe</h1>
+      <div class="static-content">
+        <p>Fondée à Paris en 1987, la Maison Proluxe est née de la vision de son créateur : offrir une alternative française aux grandes maisons de luxe, en misant sur l'excellence des matériaux et la pureté des lignes. Le premier atelier, installé rue de Rivoli, ne comptait alors que trois artisans horlogers.</p>
+        <p>Au fil des décennies, Proluxe a étendu son savoir-faire à la maroquinerie, aux bijoux, puis aux parfums et à la lunetterie. Chaque nouvelle catégorie a été l'occasion de collaborer avec les meilleurs artisans de France et d'Italie, sans jamais transiger sur la qualité.</p>
+        <p>Aujourd'hui, la Maison est présente dans 12 pays et continue de défendre une vision du luxe : celle de l'objet que l'on transmet, plutôt que celle de l'objet que l'on affiche.</p>
+        <h2>Notre promesse</h2>
+        <p>Des pièces d'exception, façonnées à la main, conçues pour durer des générations. Chaque création Proluxe est accompagnée d'un certificat d'authenticité et bénéficie d'une garantie de 5 ans sur les mouvements horlogers.</p>
+        <h2>Nos ateliers</h2>
+        <p>Nos trois ateliers principaux se trouvent à Paris (maroquinerie et bijoux), Besançon (horlogerie) et Grasse (parfums). Ils emploient aujourd'hui 87 artisans, tous formés aux techniques traditionnelles et détenteurs d'un CAP ou d'un diplôme supérieur en métiers d'art.</p>
+        <h2>Nos engagements</h2>
+        <ul>
+          <li>Traçabilité complète des matières premières</li>
+          <li>Cuirs européens tannés végétalement</li>
+          <li>Or et diamants issus de filières responsables certifiées</li>
+          <li>Ateliers labellisés Entreprise du Patrimoine Vivant (EPV)</li>
+          <li>Aucune sous-traitance hors Europe</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="view-craft" class="view">
+    <div class="container static-page">
+      <div class="eyebrow">Excellence</div>
+      <h1>Notre Savoir-Faire</h1>
+      <div class="static-content">
+        <p>Chaque pièce Proluxe est le fruit d'un processus rigoureux, jalonné de contrôles qualité. Nos horlogers assemblent les mouvements à la main dans notre atelier de Besançon, tandis que nos maroquiniers sélectionnent les peaux dans les tanneries du Puy-en-Velay. Les bijoux sont sertis par des artisans joailliers formés aux techniques traditionnelles.</p>
+        <h2>L'horlogerie</h2>
+        <p>Nos mouvements automatiques suisses sont assemblés à la main, pièce par pièce, dans notre atelier bisontin. Chaque montre subit 47 contrôles de qualité avant de quitter l'atelier, et sa précision est testée sur 15 jours consécutifs. Les cadrans sont décorés selon des techniques traditionnelles : guillochage, soleillage, côtes de Genève.</p>
+        <h2>La maroquinerie</h2>
+        <p>Nous travaillons exclusivement du cuir pleine fleur, tanné végétalement en Europe. Chaque sac est découpé, cousu et assemblé à la main par un seul artisan, qui signe son œuvre d'un poinçon discret à l'intérieur. Comptez 22 heures de travail pour un sac Riviera.</p>
+        <h2>La joaillerie</h2>
+        <p>Nos pierres sont sélectionnées par notre gemmologue en personne, qui se rend chaque année à Anvers et à Jaipur. Le sertissage est réalisé à la main, selon la technique du serti griffes ou du serti clos, par des artisans formés pendant 7 ans minimum.</p>
+        <h2>Les parfums</h2>
+        <p>Nos parfums sont composés à Grasse, berceau mondial de la parfumerie. Chaque fragrance est le fruit d'une macération de 6 à 8 semaines, dans le respect des techniques traditionnelles de l'enfleurage et de la distillation.</p>
+        <h2>La lunetterie</h2>
+        <p>Nos montures sont taillées dans l'acétate italien MazzaChello, travaillé à la main dans notre atelier de Morez, capitale historique de la lunetterie française. Chaque paire subit 32 contrôles avant expédition.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="view-contact" class="view">
+    <div class="container" style="padding:60px 0 80px;max-width:760px">
+      <div class="eyebrow">Service Client</div>
+      <h1 style="font-size:clamp(32px,5vw,48px);margin-bottom:10px">Contactez-nous</h1>
+      <p style="color:var(--muted);font-weight:300;margin-bottom:36px">Notre équipe vous répond sous 24h ouvrées.</p>
+      <div class="contact-card">
+        <h3>Par téléphone</h3>
+        <p class="big">01 23 45 67 89</p>
+        <p>Du lundi au vendredi, de 9h à 18h (appel non surtaxé)</p>
+      </div>
+      <div class="contact-card">
+        <h3>Par email</h3>
+        <p class="big">contact@proluxe.fr</p>
+        <p>Réponse sous 24h ouvrées</p>
+      </div>
+      <div class="contact-card">
+        <h3>Adresse postale</h3>
+        <p style="font-size:15px;color:#b5b5b5;line-height:1.9">Proluxe Maison de Luxe<br>12 Rue de Rivoli<br>75001 Paris, France</p>
+      </div>
+      <form id="contactForm" class="contact-card">
+        <h3>Envoyez-nous un message</h3>
+        <div class="field"><label>Votre nom *</label><input type="text" id="c_name" required></div>
+        <div class="field"><label>Votre email *</label><input type="email" id="c_email" required></div>
+        <div class="field"><label>Sujet *</label><input type="text" id="c_subject" required></div>
+        <div class="field"><label>Message *</label><textarea id="c_message" rows="5" required></textarea></div>
+        <button type="submit" class="btn btn-block">Envoyer le message</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="view-legal" class="view">
+    <div class="container static-page">
+      <div class="eyebrow">Informations légales</div>
+      <h1>Mentions légales</h1>
+      <div class="static-content">
+        <p><em>Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique (LCEN), voici les mentions légales du site proluxe.fr.</em></p>
+        <h2>1. Éditeur du site</h2>
+        <p><strong>Proluxe SAS</strong><br>Société par actions simplifiée au capital de 50 000 €<br>Siège social : 12 Rue de Rivoli, 75001 Paris, France<br>RCS Paris B 123 456 789<br>SIRET : 123 456 789 00012<br>N° TVA intracommunautaire : FR 12 123456789<br>Code APE : 4777Z<br>Directeur de la publication : Madame Sophie Laurent, Présidente</p>
+        <p>Téléphone : 01 23 45 67 89 (appel non surtaxé)<br>Email : contact@proluxe.fr</p>
+        <h2>2. Hébergeur du site</h2>
+        <p><strong>Netlify, Inc.</strong><br>512 2nd Street, Suite 200<br>San Francisco, CA 94107, États-Unis<br>Téléphone : +1 (415) 691-1572<br>Site : netlify.com</p>
+        <h2>3. Propriété intellectuelle</h2>
+        <p>L'ensemble des éléments composant ce site (marques, logos, textes, photographies, dessins, modèles, bases de données) est la propriété exclusive de Proluxe SAS ou fait l'objet d'une licence d'utilisation. Toute reproduction, représentation, modification ou exploitation, totale ou partielle, sans autorisation écrite préalable, est strictement interdite et constitue une contrefaçon sanctionnée par les articles L.335-2 et suivants du Code de la propriété intellectuelle.</p>
+        <h2>4. Données personnelles</h2>
+        <p>Le traitement des données personnelles est détaillé dans notre <a data-nav="privacy">Politique de confidentialité</a>, conforme au Règlement Général sur la Protection des Données (RGPD).</p>
+        <h2>5. Cookies</h2>
+        <p>L'utilisation des cookies est détaillée dans notre <a data-nav="cookies">Politique cookies</a>.</p>
+        <h2>6. Médiation de la consommation</h2>
+        <p>Conformément à l'article L.616-1 du Code de la consommation, en cas de litige non résolu avec le service client, le consommateur peut recourir gratuitement au médiateur de la consommation :</p>
+        <p><strong>CM2C — Centre de Médiation de la Consommation de Conciliateurs de Justice</strong><br>14 rue Saint Jean, 75017 Paris<br>Site : cm2c.net</p>
+        <h2>7. Droit applicable</h2>
+        <p>Le présent site et ses mentions légales sont soumis au droit français. En cas de litige, les tribunaux français seront seuls compétents.</p>
+        <p style="margin-top:30px;font-size:12px;color:var(--muted)">Dernière mise à jour : novembre 2025</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="view-cgv" class="view">
+    <div class="container static-page">
+      <div class="eyebrow">Conditions commerciales</div>
+      <h1>Conditions Générales de Vente</h1>
+      <div class="static-content">
+        <p><em>Les présentes Conditions Générales de Vente (CGV) régissent les relations contractuelles entre Proluxe SAS et tout consommateur effectuant un achat sur le site proluxe.fr, conformément aux articles L.111-1 et suivants du Code de la consommation.</em></p>
+        <h2>Article 1 — Objet</h2>
+        <p>Les présentes CGV ont pour objet de définir les modalités de vente à distance des produits proposés par Proluxe SAS (montres, maroquinerie, bijoux, parfums, lunettes) à tout consommateur. Toute commande implique l'acceptation sans réserve des présentes CGV.</p>
+        <h2>Article 2 — Produits</h2>
+        <p>Les produits sont décrits avec la plus grande exactitude possible. Les photographies sont données à titre indicatif et ne sauraient engager le vendeur. Les produits sont proposés dans la limite des stocks disponibles.</p>
+        <h2>Article 3 — Prix</h2>
+        <p>Les prix sont indiqués en euros, toutes taxes comprises (TTC), hors frais de livraison. Proluxe SAS se réserve le droit de modifier ses prix à tout moment, étant entendu que le prix applicable est celui affiché au moment de la validation de la commande.</p>
+        <p>Conformément à la directive Omnibus (article L.112-1-1 du Code de la consommation), en cas de promotion, le prix de référence est le prix le plus bas pratiqué au cours des 30 jours précédant l'entrée en vigueur de la promotion.</p>
+        <h2>Article 4 — Commande</h2>
+        <p>Le processus de commande comprend les étapes suivantes : sélection des produits, ajout au panier, vérification du panier, saisie des coordonnées de livraison, saisie des coordonnées de paiement, validation finale. La validation finale vaut conclusion du contrat de vente.</p>
+        <p>Un email de confirmation contenant le récapitulatif de la commande est envoyé au client après paiement.</p>
+        <h2>Article 5 — Paiement</h2>
+        <p>Le paiement s'effectue en ligne par carte bancaire (Visa, Mastercard, American Express) via notre prestataire sécurisé <strong>Stripe Payments Europe, Ltd.</strong> (1 Grand Canal Street Lower, Grand Canal Dock, Dublin, D02 HD61, Irlande).</p>
+        <p>Aucune donnée bancaire n'est stockée sur nos serveurs. Les transactions sont protégées par le protocole SSL et l'authentification 3D Secure.</p>
+        <h2>Article 6 — Livraison</h2>
+        <p>Les produits sont livrés à l'adresse indiquée par le client lors de la commande. Délais indicatifs :</p>
+        <ul>
+          <li><strong>France métropolitaine :</strong> 2 à 4 jours ouvrés</li>
+          <li><strong>Belgique, Suisse, Luxembourg :</strong> 3 à 6 jours ouvrés</li>
+          <li><strong>Reste de l'Union européenne :</strong> 5 à 8 jours ouvrés</li>
+        </ul>
+        <p>Frais de livraison : 15 € (offerts à partir de 500 € d'achat). En cas de retard de livraison supérieur à 30 jours, le client peut annuler sa commande et obtenir un remboursement intégral.</p>
+        <h2>Article 7 — Droit de rétractation</h2>
+        <p>Conformément aux articles L.221-18 et suivants du Code de la consommation, le client dispose d'un délai de <strong>14 jours</strong> à compter de la réception du produit pour exercer son droit de rétractation, sans avoir à justifier de motif ni à payer de pénalité.</p>
+        <p>Pour exercer ce droit, le client doit notifier sa décision par email à contact@proluxe.fr ou par courrier à Proluxe SAS — Service Retours, 12 Rue de Rivoli, 75001 Paris. Le remboursement intervient dans les 14 jours suivant la réception du produit retourné, dans son état et emballage d'origine.</p>
+        <p><em>Exception : les produits personnalisés ou gravés ne sont pas éligibles au droit de rétractation (article L.221-28 du Code de la consommation).</em></p>
+        <h2>Article 8 — Garanties légales</h2>
+        <p>Tous nos produits bénéficient de :</p>
+        <ul>
+          <li><strong>La garantie légale de conformité</strong> (articles L.217-4 et suivants du Code de la consommation) : 2 ans à compter de la délivrance du bien.</li>
+          <li><strong>La garantie des vices cachés</strong> (articles 1641 et suivants du Code civil) : dans un délai de 2 ans à compter de la découverte du vice.</li>
+        </ul>
+        <p>En outre, une <strong>garantie commerciale de 5 ans</strong> est offerte sur les mouvements horlogers, ainsi qu'un service d'entretien gratuit la première année.</p>
+        <h2>Article 9 — Responsabilité</h2>
+        <p>Proluxe SAS ne saurait être tenue responsable des dommages résultant d'une mauvaise utilisation des produits, d'une utilisation non conforme à leur destination, ou d'un cas de force majeure.</p>
+        <h2>Article 10 — Litiges et médiation</h2>
+        <p>En cas de litige, le client s'adresse en priorité au service client à contact@proluxe.fr. À défaut de résolution amiable, il peut recourir gratuitement au médiateur de la consommation CM2C (14 rue Saint Jean, 75017 Paris — cm2c.net), conformément à l'article L.612-1 du Code de la consommation.</p>
+        <p>Le client peut également utiliser la plateforme de Règlement en Ligne des Litiges (RLL) de la Commission européenne : <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a></p>
+        <h2>Article 11 — Droit applicable</h2>
+        <p>Les présentes CGV sont soumises au droit français. En cas de litige, et après échec de toute tentative de résolution amiable, les tribunaux français seront compétents.</p>
+        <p style="margin-top:30px;font-size:12px;color:var(--muted)">Version en vigueur au 14 novembre 2025</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="view-privacy" class="view">
+    <div class="container static-page">
+      <div class="eyebrow">Vos données</div>
+      <h1>Politique de confidentialité</h1>
+      <div class="static-content">
+        <p><em>Cette politique est établie conformément au Règlement (UE) 2016/679 du 27 avril 2016 (RGPD) et à la loi n° 78-17 du 6 janvier 1978 modifiée (Informatique et Libertés).</em></p>
+        <h2>1. Responsable du traitement</h2>
+        <p><strong>Proluxe SAS</strong><br>12 Rue de Rivoli, 75001 Paris<br>SIRET : 123 456 789 00012<br>Contact DPO : dpo@proluxe.fr</p>
+        <h2>2. Données collectées</h2>
+        <p>Dans le cadre de l'utilisation du site, nous collectons les données suivantes :</p>
+        <ul>
+          <li><strong>Identité :</strong> nom, prénom</li>
+          <li><strong>Coordonnées :</strong> adresse email, numéro de téléphone, adresse postale</li>
+          <li><strong>Données de commande :</strong> historique d'achats, montant, date</li>
+          <li><strong>Données de paiement :</strong> traitées uniquement par Stripe, jamais stockées par Proluxe</li>
+          <li><strong>Données de navigation :</strong> adresse IP, pages visitées (via cookies analytiques si consentement)</li>
+        </ul>
+        <h2>3. Finalités et bases légales</h2>
+        <ul>
+          <li><strong>Gestion des commandes et livraisons :</strong> exécution du contrat (art. 6.1.b RGPD)</li>
+          <li><strong>Facturation et comptabilité :</strong> obligation légale (art. 6.1.c RGPD)</li>
+          <li><strong>Envoi de la newsletter :</strong> consentement (art. 6.1.a RGPD)</li>
+          <li><strong>Amélioration du site :</strong> intérêt légitime (art. 6.1.f RGPD)</li>
+          <li><strong>Lutte contre la fraude :</strong> intérêt légitime</li>
+        </ul>
+        <h2>4. Destinataires des données</h2>
+        <p>Vos données sont transmises aux prestataires suivants, dans le strict cadre de l'exécution de la commande :</p>
+        <ul>
+          <li><strong>Stripe Payments Europe, Ltd.</strong> — traitement des paiements (Irlande)</li>
+          <li><strong>Netlify, Inc.</strong> — hébergement du site (États-Unis, sous clauses contractuelles types)</li>
+          <li><strong>Colissimo / DHL</strong> — livraison des commandes</li>
+          <li><strong>Brevo (Sendinblue)</strong> — envoi des emails transactionnels</li>
+        </ul>
+        <p>Aucune donnée n'est vendue ou cédée à des tiers à des fins commerciales.</p>
+        <h2>5. Durée de conservation</h2>
+        <ul>
+          <li><strong>Compte client actif :</strong> pendant toute la durée de la relation commerciale</li>
+          <li><strong>Prospects :</strong> 3 ans à compter du dernier contact</li>
+          <li><strong>Données comptables :</strong> 10 ans (obligation légale)</li>
+          <li><strong>Cookies analytiques :</strong> 13 mois maximum</li>
+        </ul>
+        <h2>6. Vos droits</h2>
+        <p>Conformément aux articles 15 à 22 du RGPD, vous disposez des droits suivants :</p>
+        <ul>
+          <li><strong>Droit d'accès :</strong> obtenir une copie de vos données</li>
+          <li><strong>Droit de rectification :</strong> corriger vos données inexactes</li>
+          <li><strong>Droit à l'effacement ("droit à l'oubli")</strong></li>
+          <li><strong>Droit à la limitation du traitement</strong></li>
+          <li><strong>Droit à la portabilité :</strong> recevoir vos données dans un format structuré</li>
+          <li><strong>Droit d'opposition :</strong> vous opposer à un traitement</li>
+          <li><strong>Droit de retirer votre consentement</strong> à tout moment</li>
+        </ul>
+        <p>Pour exercer ces droits, écrivez à <strong>dpo@proluxe.fr</strong> en joignant une pièce d'identité. Une réponse vous sera apportée sous 1 mois maximum.</p>
+        <h2>7. Réclamation</h2>
+        <p>Si vous estimez que vos droits ne sont pas respectés, vous pouvez adresser une réclamation à la <strong>CNIL</strong> :<br>3 Place de Fontenoy, TSA 80715, 75334 Paris Cedex 07<br>Site : <a href="https://www.cnil.fr" target="_blank" rel="noopener">cnil.fr</a></p>
+        <h2>8. Sécurité</h2>
+        <p>Nous mettons en œuvre les mesures techniques et organisationnelles appropriées pour garantir un niveau de sécurité adapté au risque : chiffrement SSL/TLS, pare-feu, contrôle d'accès, sauvegardes régulières, sensibilisation des collaborateurs.</p>
+        <p style="margin-top:30px;font-size:12px;color:var(--muted)">Dernière mise à jour : novembre 2025</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="view-cookies" class="view">
+    <div class="container static-page">
+      <div class="eyebrow">Traceurs</div>
+      <h1>Politique cookies</h1>
+      <div class="static-content">
+        <p><em>Conformément aux lignes directrices de la CNIL et à l'article 82 de la loi Informatique et Libertés, cette politique détaille l'usage des cookies sur proluxe.fr.</em></p>
+        <h2>Qu'est-ce qu'un cookie ?</h2>
+        <p>Un cookie est un petit fichier texte déposé sur votre terminal lors de la visite d'un site. Il permet de reconnaître votre navigateur et de conserver certaines informations (panier, préférences, session).</p>
+        <h2>Cookies utilisés sur Proluxe</h2>
+        <h3>Cookies strictement nécessaires (pas de consentement requis)</h3>
+        <ul>
+          <li><strong>proluxe_cart :</strong> conserve le contenu de votre panier — 30 jours</li>
+          <li><strong>proluxe_promo :</strong> conserve votre code promo appliqué — 30 jours</li>
+          <li><strong>proluxe_cookies :</strong> mémorise votre choix concernant les cookies — 13 mois</li>
+        </ul>
+        <h3>Cookies analytiques (soumis à consentement)</h3>
+        <p>Nous n'utilisons actuellement aucun cookie analytique tiers. Si cela devait évoluer (Google Analytics, Matomo), votre consentement serait recueilli au préalable.</p>
+        <h3>Cookies publicitaires</h3>
+        <p>Aucun cookie publicitaire n'est déposé sur Proluxe. Nous ne faisons pas de retargeting.</p>
+        <h2>Gérer vos préférences</h2>
+        <p>Vous pouvez à tout moment modifier votre choix en cliquant sur le lien « Gérer les cookies » en bas de page, ou en supprimant les cookies via les paramètres de votre navigateur.</p>
+        <p>Pour en savoir plus : <a href="https://www.cnil.fr/fr/cookies-et-autres-traceurs" target="_blank" rel="noopener">cnil.fr/fr/cookies-et-autres-traceurs</a></p>
+        <p style="margin-top:30px;font-size:12px;color:var(--muted)">Dernière mise à jour : novembre 2025</p>
+      </div>
+    </div>
   </section>
 </main>
 
-<!-- ================= FOOTER ================= -->
 <footer>
   <div class="container">
     <div class="footer-grid">
@@ -366,34 +567,41 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:70px 0 
           <li data-nav="shop" data-cat="Montres">Montres</li>
           <li data-nav="shop" data-cat="Bijoux">Bijoux</li>
           <li data-nav="shop" data-cat="Maroquinerie">Maroquinerie</li>
+          <li data-nav="shop" data-cat="Parfums">Parfums</li>
+          <li data-nav="shop" data-cat="Lunettes">Lunettes</li>
         </ul>
       </div>
       <div>
         <h4>Maison</h4>
         <ul>
-          <li>Notre histoire</li>
-          <li>Savoir-faire</li>
-          <li>Boutiques</li>
-          <li>Contact</li>
+          <li data-nav="history">Notre histoire</li>
+          <li data-nav="craft">Savoir-faire</li>
+          <li data-nav="contact">Contact</li>
         </ul>
       </div>
       <div>
-        <h4>Newsletter</h4>
-        <p class="footer-about" style="max-width:none;margin-bottom:0">Recevez nos nouveautés et ventes privées en avant-première.</p>
-        <form class="newsletter" id="newsletterForm">
-          <input type="email" placeholder="Votre email" required>
-          <button type="submit">OK</button>
-        </form>
+        <h4>Légal</h4>
+        <ul>
+          <li data-nav="legal">Mentions légales</li>
+          <li data-nav="cgv">CGV</li>
+          <li data-nav="privacy">Confidentialité</li>
+          <li data-nav="cookies">Cookies</li>
+        </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Proluxe. Tous droits réservés.</span>
-      <span>CGV · Mentions légales · Confidentialité</span>
+      <span>© 2025 Proluxe SAS — Tous droits réservés</span>
+      <span>
+        <a data-nav="legal">Mentions</a> ·
+        <a data-nav="cgv">CGV</a> ·
+        <a data-nav="privacy">Confidentialité</a> ·
+        <a data-nav="cookies">Cookies</a> ·
+        <a id="manageCookies">Gérer les cookies</a>
+      </span>
     </div>
   </div>
 </footer>
 
-<!-- ================= CART DRAWER ================= -->
 <div class="overlay" id="overlay"></div>
 <aside class="drawer" id="cartDrawer">
   <div class="drawer-head">
@@ -404,262 +612,167 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:70px 0 
   <div class="drawer-foot" id="cartFoot"></div>
 </aside>
 
-<!-- ================= TOAST ================= -->
+<div class="cookie-banner" id="cookieBanner">
+  <p>Nous utilisons des cookies pour assurer le fonctionnement du site (panier, session) et, avec votre accord, pour mesurer l'audience. <a data-nav="cookies">En savoir plus</a></p>
+  <div class="cookie-btns">
+    <button class="refuse" id="refuseCookies">Refuser</button>
+    <button class="accept" id="acceptCookies">Accepter</button>
+  </div>
+</div>
+
 <div id="toast"></div>
 
 <script>
-/* =========================================================
-   DONNÉES PRODUITS
-   ========================================================= */
 const PRODUCTS = [
-  { id:1, name:"Montre Aurore Or", cat:"Montres", price:2450, oldPrice:2900, tag:"Best-seller",
-    img:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=80",
-    desc:"Un boîtier doré à l'or fin, un cadran soleillé et un bracelet en cuir véritable. L'élégance intemporelle signée Proluxe.",
-    details:["Boîtier acier plaqué or 18 carats","Mouvement automatique suisse","Étanche 50 m","Garantie 5 ans"] },
-  { id:2, name:"Montre Squelette Noire", cat:"Montres", price:3900, tag:"Nouveau",
-    img:"https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=800&q=80",
-    desc:"Un mécanisme apparent d'une précision extrême, habillé d'un boîtier en acier noir mat. Pour les amateurs d'horlogerie contemporaine.",
-    details:["Mouvement squelette automatique","Boîtier acier PVD noir","Verre saphir anti-reflet","Garantie 5 ans"] },
-  { id:3, name:"Montre Chrono Acier", cat:"Montres", price:3100,
-    img:"https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=800&q=80",
-    desc:"Chronographe au caractère affirmé, alliant la robustesse de l'acier à la finesse d'un cadran guilloché.",
-    details:["Chronographe automatique","Boîtier acier 41 mm","Bracelet acier brossé","Garantie 5 ans"] },
-  { id:4, name:"Sac Riviera Cuir", cat:"Maroquinerie", price:1890, tag:"Best-seller",
-    img:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&q=80",
-    desc:"Un cuir pleine fleur tanné à la main, des finitions dorées à la feuille. Le compagnon des grandes occasions.",
-    details:["Cuir de veau pleine fleur","Doublure en suède","Fermoir laiton doré","Fabriqué en France"] },
-  { id:5, name:"Pochette Soirée", cat:"Maroquinerie", price:1250,
-    img:"https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&q=80",
-    desc:"Une pochette épurée, pensée pour les soirées d'exception. Chaîne amovible en laiton doré.",
-    details:["Cuir grainé italien","Chaîne amovible","Intérieur satiné","Fabriqué en Italie"] },
-  { id:6, name:"Portefeuille Monogramme", cat:"Maroquinerie", price:390,
-    img:"https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800&q=80",
-    desc:"Le monogramme Proluxe discrètement embossé sur un cuir souple. 12 emplacements cartes.",
-    details:["Cuir de veau","Monogramme embossé","12 emplacements cartes","Fabriqué en France"] },
-  { id:7, name:"Collier Éclipse", cat:"Bijoux", price:3200, tag:"Nouveau",
-    img:"https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80",
-    desc:"Un diamant taille brillant serti sur une chaîne d'or blanc 18 carats. La pureté à l'état brut.",
-    details:["Or blanc 18 carats","Diamant 0,5 carat","Serti main","Écrin en cuir offert"] },
-  { id:8, name:"Bracelet Saphir", cat:"Bijoux", price:1450,
-    img:"https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&q=80",
-    desc:"Un saphir bleu nuit entouré de diamants, sur un bracelet ajustable en or jaune.",
-    details:["Or jaune 18 carats","Saphir 1,2 carat","Diamants 0,1 carat","Écrin en cuir offert"] },
-  { id:9, name:"Boucles Perle Impériale", cat:"Bijoux", price:890,
-    img:"https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80",
-    desc:"Perles de culture d'une rondeur parfaite, montées sur des attaches en or rose.",
-    details:["Or rose 18 carats","Perles de culture","Fermoir sécurisé","Écrin en cuir offert"] },
-  { id:10, name:"Bague Émeraude", cat:"Bijoux", price:2750,
-    img:"https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=800&q=80",
-    desc:"Une émeraude taille émeraude, sertie sur un anneau d'or blanc. Une pièce unique.",
-    details:["Or blanc 18 carats","Émeraude 1,8 carat","Serti main","Pièce unique"] },
-  { id:11, name:"Parfum Nuit d'Or", cat:"Parfums", price:245, tag:"Best-seller",
-    img:"https://images.unsplash.com/photo-1541643600914-78b084683601?w=800&q=80",
-    desc:"Oud, ambre et vanille. Un sillage profond et enveloppant, pour les soirées qui ne s'oublient pas.",
-    details:["Eau de parfum 100 ml","Notes : oud, ambre, vanille","Tenue 12 h","Flacon rechargeable"] },
-  { id:12, name:"Parfum Ambre Blanc", cat:"Parfums", price:210,
-    img:"https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=800&q=80",
-    desc:"Un ambre lumineux adouci par le musc blanc. La douceur d'un cocon, la force d'une signature.",
-    details:["Eau de parfum 100 ml","Notes : ambre, musc, iris","Tenue 10 h","Flacon rechargeable"] },
-  { id:13, name:"Parfum Rose Impériale", cat:"Parfums", price:260,
-    img:"https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=800&q=80",
-    desc:"La rose de mai dans toute sa splendeur, rehaussée d'une pointe de poivre rose.",
-    details:["Eau de parfum 100 ml","Notes : rose de mai, poivre, cèdre","Tenue 11 h","Flacon rechargeable"] },
-  { id:14, name:"Lunettes Solstice", cat:"Lunettes", price:480,
-    img:"https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=800&q=80",
-    desc:"Une monture acétate aux lignes solaires, verres polarisés catégorie 3.",
-    details:["Acétate italien","Verres polarisés","Protection UV400","Étui rigide inclus"] },
-  { id:15, name:"Lunettes Aviateur Or", cat:"Lunettes", price:520, tag:"Nouveau",
-    img:"https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=800&q=80",
-    desc:"L'aviateur revisité : fine monture dorée, verres dégradés. Une icône intemporelle.",
-    details:["Monture métal doré","Verres dégradés","Protection UV400","Étui rigide inclus"] },
-  { id:16, name:"Lunettes Cat Eye", cat:"Lunettes", price:450,
-    img:"https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=800&q=80",
-    desc:"Une monture féline en acétate noir, pour un regard affirmé et mystérieux.",
-    details:["Acétate noir","Verres teintés","Protection UV400","Étui rigide inclus"] }
+  {id:1,name:"Montre Aurore Or",cat:"Montres",price:2450,oldPrice:2900,tag:"Best-seller",img:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=80",desc:"Un boîtier doré à l'or fin, un cadran soleillé et un bracelet en cuir véritable. L'élégance intemporelle signée Proluxe.",details:["Boîtier acier plaqué or 18 carats","Mouvement automatique suisse","Étanche 50 m","Garantie 5 ans"]},
+  {id:2,name:"Montre Squelette Noire",cat:"Montres",price:3900,tag:"Nouveau",img:"https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=800&q=80",desc:"Un mécanisme apparent d'une précision extrême, habillé d'un boîtier en acier noir mat. Pour les amateurs d'horlogerie contemporaine.",details:["Mouvement squelette automatique","Boîtier acier PVD noir","Verre saphir anti-reflet","Garantie 5 ans"]},
+  {id:3,name:"Montre Chrono Acier",cat:"Montres",price:3100,img:"https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=800&q=80",desc:"Chronographe au caractère affirmé, alliant la robustesse de l'acier à la finesse d'un cadran guilloché.",details:["Chronographe automatique","Boîtier acier 41 mm","Bracelet acier brossé","Garantie 5 ans"]},
+  {id:4,name:"Sac Riviera Cuir",cat:"Maroquinerie",price:1890,tag:"Best-seller",img:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&q=80",desc:"Un cuir pleine fleur tanné à la main, des finitions dorées à la feuille. Le compagnon des grandes occasions.",details:["Cuir de veau pleine fleur","Doublure en suède","Fermoir laiton doré","Fabriqué en France"]},
+  {id:5,name:"Pochette Soirée",cat:"Maroquinerie",price:1250,img:"https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&q=80",desc:"Une pochette épurée, pensée pour les soirées d'exception. Chaîne amovible en laiton doré.",details:["Cuir grainé italien","Chaîne amovible","Intérieur satiné","Fabriqué en Italie"]},
+  {id:6,name:"Portefeuille Monogramme",cat:"Maroquinerie",price:390,img:"https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800&q=80",desc:"Le monogramme Proluxe discrètement embossé sur un cuir souple. 12 emplacements cartes.",details:["Cuir de veau","Monogramme embossé","12 emplacements cartes","Fabriqué en France"]},
+  {id:7,name:"Collier Éclipse",cat:"Bijoux",price:3200,tag:"Nouveau",img:"https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80",desc:"Un diamant taille brillant serti sur une chaîne d'or blanc 18 carats. La pureté à l'état brut.",details:["Or blanc 18 carats","Diamant 0,5 carat","Serti main","Écrin en cuir offert"]},
+  {id:8,name:"Bracelet Saphir",cat:"Bijoux",price:1450,img:"https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&q=80",desc:"Un saphir bleu nuit entouré de diamants, sur un bracelet ajustable en or jaune.",details:["Or jaune 18 carats","Saphir 1,2 carat","Diamants 0,1 carat","Écrin en cuir offert"]},
+  {id:9,name:"Boucles Perle Impériale",cat:"Bijoux",price:890,img:"https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80",desc:"Perles de culture d'une rondeur parfaite, montées sur des attaches en or rose.",details:["Or rose 18 carats","Perles de culture","Fermoir sécurisé","Écrin en cuir offert"]},
+  {id:10,name:"Bague Émeraude",cat:"Bijoux",price:2750,img:"https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=800&q=80",desc:"Une émeraude taille émeraude, sertie sur un anneau d'or blanc. Une pièce unique.",details:["Or blanc 18 carats","Émeraude 1,8 carat","Serti main","Pièce unique"]},
+  {id:11,name:"Parfum Nuit d'Or",cat:"Parfums",price:245,tag:"Best-seller",img:"https://images.unsplash.com/photo-1541643600914-78b084683601?w=800&q=80",desc:"Oud, ambre et vanille. Un sillage profond et enveloppant, pour les soirées qui ne s'oublient pas.",details:["Eau de parfum 100 ml","Notes : oud, ambre, vanille","Tenue 12 h","Flacon rechargeable"]},
+  {id:12,name:"Parfum Ambre Blanc",cat:"Parfums",price:210,img:"https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=800&q=80",desc:"Un ambre lumineux adouci par le musc blanc. La douceur d'un cocon, la force d'une signature.",details:["Eau de parfum 100 ml","Notes : ambre, musc, iris","Tenue 10 h","Flacon rechargeable"]},
+  {id:13,name:"Parfum Rose Impériale",cat:"Parfums",price:260,img:"https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=800&q=80",desc:"La rose de mai dans toute sa splendeur, rehaussée d'une pointe de poivre rose.",details:["Eau de parfum 100 ml","Notes : rose de mai, poivre, cèdre","Tenue 11 h","Flacon rechargeable"]},
+  {id:14,name:"Lunettes Solstice",cat:"Lunettes",price:480,img:"https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=800&q=80",desc:"Une monture acétate aux lignes solaires, verres polarisés catégorie 3.",details:["Acétate italien","Verres polarisés","Protection UV400","Étui rigide inclus"]},
+  {id:15,name:"Lunettes Aviateur Or",cat:"Lunettes",price:520,tag:"Nouveau",img:"https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=800&q=80",desc:"L'aviateur revisité : fine monture dorée, verres dégradés. Une icône intemporelle.",details:["Monture métal doré","Verres dégradés","Protection UV400","Étui rigide inclus"]},
+  {id:16,name:"Lunettes Cat Eye",cat:"Lunettes",price:450,img:"https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=800&q=80",desc:"Une monture féline en acétate noir, pour un regard affirmé et mystérieux.",details:["Acétate noir","Verres teintés","Protection UV400","Étui rigide inclus"]}
 ];
-
 const CATEGORIES = [
-  { name:"Montres", img:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80" },
-  { name:"Maroquinerie", img:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&q=80" },
-  { name:"Bijoux", img:"https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&q=80" },
-  { name:"Parfums", img:"https://images.unsplash.com/photo-1541643600914-78b084683601?w=600&q=80" },
-  { name:"Lunettes", img:"https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&q=80" }
+  {name:"Montres",img:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80"},
+  {name:"Maroquinerie",img:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&q=80"},
+  {name:"Bijoux",img:"https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&q=80"},
+  {name:"Parfums",img:"https://images.unsplash.com/photo-1541643600914-78b084683601?w=600&q=80"},
+  {name:"Lunettes",img:"https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&q=80"}
 ];
 
-/* =========================================================
-   ÉTAT
-   ========================================================= */
 const state = {
-  view: 'home',
-  cart: JSON.parse(localStorage.getItem('proluxe_cart') || '[]'),
-  promo: localStorage.getItem('proluxe_promo') || null,
-  filters: { cat:'Tous', sort:'featured', search:'' },
-  currentProduct: null,
-  checkoutStep: 1,
-  checkoutData: {},
-  order: null
+  view:'home',
+  cart:JSON.parse(localStorage.getItem('proluxe_cart')||'[]'),
+  promo:localStorage.getItem('proluxe_promo')||null,
+  filters:{cat:'Tous',sort:'featured',search:''},
+  currentProduct:null,
+  checkoutStep:1,
+  checkoutData:{},
+  order:null
 };
-
-/* =========================================================
-   UTILITAIRES
-   ========================================================= */
 const $ = id => document.getElementById(id);
 const fmt = n => new Intl.NumberFormat('fr-FR',{maximumFractionDigits:0}).format(n) + ' €';
 const getProduct = id => PRODUCTS.find(p => p.id === id);
 
-function toast(msg) {
-  const t = $('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  clearTimeout(t._timer);
-  t._timer = setTimeout(() => t.classList.remove('show'), 2400);
+function toast(msg){
+  const t=$('toast'); t.textContent=msg; t.classList.add('show');
+  clearTimeout(t._timer); t._timer=setTimeout(()=>t.classList.remove('show'),2600);
+}
+function saveCart(){
+  localStorage.setItem('proluxe_cart',JSON.stringify(state.cart));
+  localStorage.setItem('proluxe_promo',state.promo||'');
+}
+function computeTotals(){
+  const subtotal = state.cart.reduce((s,it)=>s+getProduct(it.id).price*it.qty,0);
+  const discount = state.promo==='PROLUXE10'?Math.round(subtotal*0.10):0;
+  const afterD = subtotal - discount;
+  const shipping = subtotal===0?0:(afterD>=500?0:15);
+  return {subtotal,discount,shipping,total:afterD+shipping};
 }
 
-function saveCart() {
-  localStorage.setItem('proluxe_cart', JSON.stringify(state.cart));
-  localStorage.setItem('proluxe_promo', state.promo || '');
-}
-
-function computeTotals() {
-  const subtotal = state.cart.reduce((s,it) => s + getProduct(it.id).price * it.qty, 0);
-  const discount = state.promo === 'PROLUXE10' ? Math.round(subtotal * 0.10) : 0;
-  const afterDiscount = subtotal - discount;
-  const shipping = subtotal === 0 ? 0 : (afterDiscount >= 500 ? 0 : 15);
-  return { subtotal, discount, shipping, total: afterDiscount + shipping };
-}
-
-/* =========================================================
-   NAVIGATION
-   ========================================================= */
-function goTo(view, data) {
+function goTo(view,data){
   state.view = view;
-  if (view === 'product') state.currentProduct = data;
-  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-  const target = $('view-' + view);
-  if (target) target.classList.add('active');
-  window.scrollTo({ top:0, behavior:'instant' in window ? 'instant' : 'auto' });
+  if(view==='product') state.currentProduct = data;
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  const target = $('view-'+view);
+  if(target) target.classList.add('active');
+  window.scrollTo({top:0,behavior:'auto'});
   $('mobileNav').classList.remove('open');
   renderView();
 }
-
-function renderView() {
-  switch (state.view) {
+function renderView(){
+  switch(state.view){
     case 'home': renderHome(); break;
     case 'shop': renderShop(); break;
     case 'product': renderProduct(); break;
     case 'checkout': renderCheckout(); break;
     case 'confirm': renderConfirm(); break;
+    default: break;
   }
 }
-
-document.addEventListener('click', e => {
+document.addEventListener('click',e=>{
   const nav = e.target.closest('[data-nav]');
-  if (nav) {
+  if(nav){
     e.preventDefault();
-    if (nav.dataset.cat) state.filters.cat = nav.dataset.cat;
+    if(nav.dataset.cat) state.filters.cat = nav.dataset.cat;
     goTo(nav.dataset.nav);
   }
 });
 
-/* =========================================================
-   CARTE PRODUIT (HTML réutilisable)
-   ========================================================= */
-function productCardHTML(p) {
-  return `
-    <div class="p-card" data-id="${p.id}">
-      <div class="p-img">
-        <img src="${p.img}" alt="${p.name}" loading="lazy">
-        ${p.tag ? `<span class="p-tag">${p.tag}</span>` : ''}
-        <button class="p-quick" data-quick="${p.id}">Ajout rapide</button>
-      </div>
-      <div class="p-info">
-        <span class="p-cat">${p.cat}</span>
-        <h3>${p.name}</h3>
-        <div class="p-price">${fmt(p.price)} ${p.oldPrice ? `<s>${fmt(p.oldPrice)}</s>` : ''}</div>
-      </div>
-    </div>`;
+function productCardHTML(p){
+  return `<div class="p-card" data-id="${p.id}">
+    <div class="p-img"><img src="${p.img}" alt="${p.name}" loading="lazy">
+      ${p.tag?`<span class="p-tag">${p.tag}</span>`:''}
+      <button class="p-quick" data-quick="${p.id}">Ajout rapide</button>
+    </div>
+    <div class="p-info">
+      <span class="p-cat">${p.cat}</span>
+      <h3>${p.name}</h3>
+      <div class="p-price">${fmt(p.price)} ${p.oldPrice?`<s>${fmt(p.oldPrice)}</s>`:''}</div>
+    </div>
+  </div>`;
 }
-
-function bindProductCards(container) {
-  container.querySelectorAll('.p-card').forEach(card => {
-    card.addEventListener('click', e => {
-      if (e.target.closest('[data-quick]')) return;
-      goTo('product', getProduct(+card.dataset.id));
+function bindProductCards(container){
+  container.querySelectorAll('.p-card').forEach(card=>{
+    card.addEventListener('click',e=>{
+      if(e.target.closest('[data-quick]')) return;
+      goTo('product',getProduct(+card.dataset.id));
     });
   });
-  container.querySelectorAll('[data-quick]').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.stopPropagation();
-      addToCart(+btn.dataset.quick, 1);
-    });
+  container.querySelectorAll('[data-quick]').forEach(btn=>{
+    btn.addEventListener('click',e=>{e.stopPropagation();addToCart(+btn.dataset.quick,1);});
   });
 }
 
-/* =========================================================
-   PAGE ACCUEIL
-   ========================================================= */
-function renderHome() {
-  const cats = $('homeCats');
-  cats.innerHTML = CATEGORIES.map(c => `
+function renderHome(){
+  $('homeCats').innerHTML = CATEGORIES.map(c=>`
     <div class="cat-card" data-nav="shop" data-cat="${c.name}">
       <img src="${c.img}" alt="${c.name}">
       <span>${c.name}</span>
     </div>`).join('');
-
-  const featured = [1,4,7,11].map(getProduct);
   const grid = $('homeFeatured');
-  grid.innerHTML = featured.map(productCardHTML).join('');
+  grid.innerHTML = [1,4,7,11].map(getProduct).map(productCardHTML).join('');
   bindProductCards(grid);
 }
 
-/* =========================================================
-   BOUTIQUE
-   ========================================================= */
-function renderShop() {
-  const pills = ['Tous', ...CATEGORIES.map(c => c.name)];
-  $('shopPills').innerHTML = pills.map(c =>
-    `<button class="pill ${state.filters.cat===c?'active':''}" data-cat="${c}">${c}</button>`
-  ).join('');
-  $('shopPills').querySelectorAll('.pill').forEach(b => {
-    b.onclick = () => { state.filters.cat = b.dataset.cat; renderShop(); };
-  });
-
+function renderShop(){
+  const pills = ['Tous',...CATEGORIES.map(c=>c.name)];
+  $('shopPills').innerHTML = pills.map(c=>`<button class="pill ${state.filters.cat===c?'active':''}" data-cat="${c}">${c}</button>`).join('');
+  $('shopPills').querySelectorAll('.pill').forEach(b=>{b.onclick=()=>{state.filters.cat=b.dataset.cat;renderShop();};});
   $('shopSearch').value = state.filters.search;
   $('shopSort').value = state.filters.sort;
-
-  let list = PRODUCTS.filter(p => {
-    const catOk = state.filters.cat === 'Tous' || p.cat === state.filters.cat;
+  let list = PRODUCTS.filter(p=>{
+    const catOk = state.filters.cat==='Tous'||p.cat===state.filters.cat;
     const searchOk = p.name.toLowerCase().includes(state.filters.search.toLowerCase());
     return catOk && searchOk;
   });
-
-  switch (state.filters.sort) {
-    case 'price-asc': list.sort((a,b) => a.price - b.price); break;
-    case 'price-desc': list.sort((a,b) => b.price - a.price); break;
-    case 'name': list.sort((a,b) => a.name.localeCompare(b.name)); break;
-    default: list.sort((a,b) => (b.tag?1:0) - (a.tag?1:0));
+  switch(state.filters.sort){
+    case 'price-asc': list.sort((a,b)=>a.price-b.price); break;
+    case 'price-desc': list.sort((a,b)=>b.price-a.price); break;
+    case 'name': list.sort((a,b)=>a.name.localeCompare(b.name)); break;
+    default: list.sort((a,b)=>(b.tag?1:0)-(a.tag?1:0));
   }
-
   $('shopCount').textContent = `${list.length} pièce${list.length>1?'s':''} · ${state.filters.cat}`;
   const grid = $('shopGrid');
-  grid.innerHTML = list.length
-    ? list.map(productCardHTML).join('')
-    : `<p style="color:var(--muted);grid-column:1/-1;text-align:center;padding:60px 0">Aucun produit ne correspond à votre recherche.</p>`;
+  grid.innerHTML = list.length ? list.map(productCardHTML).join('') : `<p style="color:var(--muted);grid-column:1/-1;text-align:center;padding:60px 0">Aucun produit ne correspond à votre recherche.</p>`;
   bindProductCards(grid);
 }
+$('shopSearch').addEventListener('input',e=>{state.filters.search=e.target.value;renderShop();});
+$('shopSort').addEventListener('change',e=>{state.filters.sort=e.target.value;renderShop();});
 
-$('shopSearch').addEventListener('input', e => { state.filters.search = e.target.value; renderShop(); });
-$('shopSort').addEventListener('change', e => { state.filters.sort = e.target.value; renderShop(); });
-
-/* =========================================================
-   FICHE PRODUIT
-   ========================================================= */
-function renderProduct() {
+function renderProduct(){
   const p = state.currentProduct;
-  if (!p) return goTo('shop');
-
+  if(!p) return goTo('shop');
   $('breadcrumb').innerHTML = `<span data-nav="home">Accueil</span> / <span data-nav="shop">Boutique</span> / <span data-nav="shop" data-cat="${p.cat}">${p.cat}</span> / ${p.name}`;
-
   $('productContent').innerHTML = `
     <div class="product-layout">
       <div class="product-image"><img src="${p.img}" alt="${p.name}"></div>
@@ -670,326 +783,241 @@ function renderProduct() {
         <p class="product-desc">${p.desc}</p>
         <div class="qty-row">
           <div class="qty-box">
-            <button id="qMinus">−</button>
-            <span id="qVal">1</span>
-            <button id="qPlus">+</button>
+            <button id="qMinus">−</button><span id="qVal">1</span><button id="qPlus">+</button>
           </div>
           <button class="btn btn-block" id="addBtn" style="flex:1">Ajouter au panier</button>
         </div>
         <div class="divider"></div>
-        <div class="product-details">
-          <h4>Détails de la pièce</h4>
-          <ul>${p.details.map(d => `<li>${d}</li>`).join('')}</ul>
-        </div>
+        <div class="product-details"><h4>Détails de la pièce</h4><ul>${p.details.map(d=>`<li>${d}</li>`).join('')}</ul></div>
       </div>
     </div>`;
-
   let qty = 1;
-  $('qMinus').onclick = () => { if (qty > 1) { qty--; $('qVal').textContent = qty; } };
-  $('qPlus').onclick = () => { qty++; $('qVal').textContent = qty; };
-  $('addBtn').onclick = () => addToCart(p.id, qty);
-
-  const related = PRODUCTS.filter(x => x.cat === p.cat && x.id !== p.id).slice(0,4);
-  const fill = [...related, ...PRODUCTS.filter(x => x.id !== p.id)].slice(0,4);
+  $('qMinus').onclick = ()=>{if(qty>1){qty--;$('qVal').textContent=qty;}};
+  $('qPlus').onclick = ()=>{qty++;$('qVal').textContent=qty;};
+  $('addBtn').onclick = ()=>addToCart(p.id,qty);
+  const related = PRODUCTS.filter(x=>x.cat===p.cat&&x.id!==p.id).slice(0,4);
+  const fill = [...related,...PRODUCTS.filter(x=>x.id!==p.id)].slice(0,4);
   const rel = $('relatedGrid');
   rel.innerHTML = fill.map(productCardHTML).join('');
   bindProductCards(rel);
 }
 
-/* =========================================================
-   PANIER
-   ========================================================= */
-function addToCart(id, qty) {
-  const item = state.cart.find(i => i.id === id);
-  if (item) item.qty += qty;
-  else state.cart.push({ id, qty });
-  saveCart();
-  updateCartUI();
+function addToCart(id,qty){
+  const item = state.cart.find(i=>i.id===id);
+  if(item) item.qty += qty;
+  else state.cart.push({id,qty});
+  saveCart(); updateCartUI();
   toast(`${getProduct(id).name} ajouté au panier`);
 }
-
-function changeQty(id, delta) {
-  const item = state.cart.find(i => i.id === id);
-  if (!item) return;
+function changeQty(id,delta){
+  const item = state.cart.find(i=>i.id===id);
+  if(!item) return;
   item.qty += delta;
-  if (item.qty <= 0) state.cart = state.cart.filter(i => i.id !== id);
-  saveCart();
-  updateCartUI();
-  if (state.view === 'checkout' && state.checkoutStep === 3) renderCheckout();
+  if(item.qty<=0) state.cart = state.cart.filter(i=>i.id!==id);
+  saveCart(); updateCartUI();
 }
+function removeItem(id){ state.cart = state.cart.filter(i=>i.id!==id); saveCart(); updateCartUI(); }
 
-function removeItem(id) {
-  state.cart = state.cart.filter(i => i.id !== id);
-  saveCart();
-  updateCartUI();
-  if (state.view === 'checkout' && state.checkoutStep === 3) renderCheckout();
-}
-
-function updateCartUI() {
-  const count = state.cart.reduce((s,i) => s + i.qty, 0);
+function updateCartUI(){
+  const count = state.cart.reduce((s,i)=>s+i.qty,0);
   $('badge').textContent = count;
   const t = computeTotals();
-
   const body = $('cartItems');
-  if (state.cart.length === 0) {
+  if(state.cart.length===0){
     body.innerHTML = `<p class="empty-cart">Votre panier est vide.<br><br>Découvrez nos pièces d'exception.</p>`;
   } else {
-    body.innerHTML = state.cart.map(it => {
+    body.innerHTML = state.cart.map(it=>{
       const p = getProduct(it.id);
-      return `
-        <div class="cart-item">
-          <img src="${p.img}" alt="${p.name}">
-          <div class="ci-info">
-            <h4>${p.name}</h4>
-            <div class="ci-price">${fmt(p.price)}</div>
-            <div class="ci-qty">
-              <button data-minus="${p.id}">−</button>
-              <span>${it.qty}</span>
-              <button data-plus="${p.id}">+</button>
-            </div>
+      return `<div class="cart-item">
+        <img src="${p.img}" alt="${p.name}">
+        <div class="ci-info">
+          <h4>${p.name}</h4>
+          <div class="ci-price">${fmt(p.price)}</div>
+          <div class="ci-qty">
+            <button data-minus="${p.id}">−</button><span>${it.qty}</span><button data-plus="${p.id}">+</button>
           </div>
-          <button class="ci-remove" data-remove="${p.id}">✕</button>
-        </div>`;
+        </div>
+        <button class="ci-remove" data-remove="${p.id}">✕</button>
+      </div>`;
     }).join('');
-    body.querySelectorAll('[data-minus]').forEach(b => b.onclick = () => changeQty(+b.dataset.minus, -1));
-    body.querySelectorAll('[data-plus]').forEach(b => b.onclick = () => changeQty(+b.dataset.plus, 1));
-    body.querySelectorAll('[data-remove]').forEach(b => b.onclick = () => removeItem(+b.dataset.remove));
+    body.querySelectorAll('[data-minus]').forEach(b=>b.onclick=()=>changeQty(+b.dataset.minus,-1));
+    body.querySelectorAll('[data-plus]').forEach(b=>b.onclick=()=>changeQty(+b.dataset.plus,1));
+    body.querySelectorAll('[data-remove]').forEach(b=>b.onclick=()=>removeItem(+b.dataset.remove));
   }
-
   $('cartFoot').innerHTML = `
     <div class="promo-row">
-      <input type="text" id="promoInput" placeholder="Code promo" value="${state.promo || ''}">
-      <button id="promoBtn">${state.promo ? 'Retirer' : 'Appliquer'}</button>
+      <input type="text" id="promoInput" placeholder="Code promo" value="${state.promo||''}">
+      <button id="promoBtn">${state.promo?'Retirer':'Appliquer'}</button>
     </div>
     <div class="sum-row"><span>Sous-total</span><span>${fmt(t.subtotal)}</span></div>
-    ${t.discount ? `<div class="sum-row discount"><span>Remise (PROLUXE10)</span><span>−${fmt(t.discount)}</span></div>` : ''}
-    <div class="sum-row"><span>Livraison</span><span>${t.shipping === 0 ? 'Offerte' : fmt(t.shipping)}</span></div>
+    ${t.discount?`<div class="sum-row discount"><span>Remise (PROLUXE10)</span><span>−${fmt(t.discount)}</span></div>`:''}
+    <div class="sum-row"><span>Livraison</span><span>${t.shipping===0?'Offerte':fmt(t.shipping)}</span></div>
     <div class="sum-row total"><span>Total</span><span>${fmt(t.total)}</span></div>
     <button class="btn btn-block" id="checkoutBtn" ${state.cart.length===0?'disabled':''}>Passer commande</button>
-    <p style="text-align:center;font-size:11px;color:var(--muted);margin-top:12px">Livraison offerte dès 500 € · Code : PROLUXE10</p>
-  `;
-
-  const promoBtn = $('promoBtn');
-  promoBtn.onclick = () => {
-    if (state.promo) { state.promo = null; saveCart(); updateCartUI(); toast('Code promo retiré'); return; }
+    <p style="text-align:center;font-size:11px;color:var(--muted);margin-top:12px">Livraison offerte dès 500 € · Code : PROLUXE10</p>`;
+  $('promoBtn').onclick = ()=>{
+    if(state.promo){ state.promo=null; saveCart(); updateCartUI(); toast('Code promo retiré'); return; }
     const code = $('promoInput').value.trim().toUpperCase();
-    if (code === 'PROLUXE10') { state.promo = code; saveCart(); updateCartUI(); toast('Code promo appliqué : −10 %'); }
+    if(code==='PROLUXE10'){ state.promo=code; saveCart(); updateCartUI(); toast('Code promo appliqué : −10 %'); }
     else toast('Code promo invalide');
   };
-  if ($('checkoutBtn')) $('checkoutBtn').onclick = startCheckout;
+  if($('checkoutBtn')) $('checkoutBtn').onclick = startCheckout;
 }
 
-function openCart() { $('cartDrawer').classList.add('open'); $('overlay').classList.add('open'); }
-function closeCart() { $('cartDrawer').classList.remove('open'); $('overlay').classList.remove('open'); }
-
+function openCart(){ $('cartDrawer').classList.add('open'); $('overlay').classList.add('open'); }
+function closeCart(){ $('cartDrawer').classList.remove('open'); $('overlay').classList.remove('open'); }
 $('openCart').onclick = openCart;
 $('closeCart').onclick = closeCart;
 $('overlay').onclick = closeCart;
 
-/* =========================================================
-   CHECKOUT
-   ========================================================= */
-function startCheckout() {
-  if (state.cart.length === 0) return toast('Votre panier est vide');
+function startCheckout(){
+  if(state.cart.length===0) return toast('Votre panier est vide');
   closeCart();
   state.checkoutStep = 1;
   state.checkoutData = {};
   goTo('checkout');
 }
 
-function renderCheckout() {
+function renderCheckout(){
   const t = computeTotals();
-  const steps = ['Livraison','Paiement','Confirmation'];
+  const steps = ['Livraison','Confirmation'];
   const d = state.checkoutData;
+  const stepper = `<div class="stepper">
+    ${steps.map((s,i)=>{
+      const n = i+1;
+      const cls = n<state.checkoutStep?'done':(n===state.checkoutStep?'active':'');
+      return `<div class="step ${cls}"><span class="step-num">${n<state.checkoutStep?'✓':n}</span><span>${s}</span></div>`;
+    }).join('')}
+  </div>`;
 
-  const stepper = `
-    <div class="stepper">
-      ${steps.map((s,i) => {
-        const n = i+1;
-        const cls = n < state.checkoutStep ? 'done' : (n === state.checkoutStep ? 'active' : '');
-        return `<div class="step ${cls}"><span class="step-num">${n < state.checkoutStep ? '✓' : n}</span><span class="step-label">${s}</span></div>`;
-      }).join('')}
-    </div>`;
-
-  const summary = `
-    <div class="summary-box">
-      <h3>Récapitulatif</h3>
-      ${state.cart.map(it => {
-        const p = getProduct(it.id);
-        return `<div class="summary-item">
-          <img src="${p.img}" alt="">
-          <div class="si-t">${p.name}<small>Qté ${it.qty}</small></div>
-          <div class="si-p">${fmt(p.price * it.qty)}</div>
-        </div>`;
-      }).join('')}
-      <div style="height:1px;background:var(--border);margin:18px 0"></div>
-      <div class="sum-row"><span>Sous-total</span><span>${fmt(t.subtotal)}</span></div>
-      ${t.discount?`<div class="sum-row discount"><span>Remise</span><span>−${fmt(t.discount)}</span></div>`:''}
-      <div class="sum-row"><span>Livraison</span><span>${t.shipping===0?'Offerte':fmt(t.shipping)}</span></div>
-      <div class="sum-row total"><span>Total</span><span>${fmt(t.total)}</span></div>
-    </div>`;
+  const summary = `<div class="summary-box">
+    <h3>Récapitulatif</h3>
+    ${state.cart.map(it=>{
+      const p = getProduct(it.id);
+      return `<div class="summary-item"><img src="${p.img}" alt="">
+        <div class="si-t">${p.name}<small>Qté ${it.qty}</small></div>
+        <div class="si-p">${fmt(p.price*it.qty)}</div></div>`;
+    }).join('')}
+    <div style="height:1px;background:var(--border);margin:18px 0"></div>
+    <div class="sum-row"><span>Sous-total</span><span>${fmt(t.subtotal)}</span></div>
+    ${t.discount?`<div class="sum-row discount"><span>Remise</span><span>−${fmt(t.discount)}</span></div>`:''}
+    <div class="sum-row"><span>Livraison</span><span>${t.shipping===0?'Offerte':fmt(t.shipping)}</span></div>
+    <div class="sum-row total"><span>Total</span><span>${fmt(t.total)}</span></div>
+  </div>`;
 
   let content = '';
 
-  if (state.checkoutStep === 1) {
-    content = `
-      <div class="form-section">
-        <h2>Adresse de livraison</h2>
-        <div class="field-row">
-          <div class="field"><label>Prénom</label><input type="text" id="f_first" value="${d.first||''}"></div>
-          <div class="field"><label>Nom</label><input type="text" id="f_last" value="${d.last||''}"></div>
-        </div>
-        <div class="field"><label>Email</label><input type="email" id="f_email" value="${d.email||''}"></div>
-        <div class="field"><label>Téléphone</label><input type="tel" id="f_phone" value="${d.phone||''}"></div>
-        <div class="field"><label>Adresse</label><input type="text" id="f_addr" value="${d.addr||''}"></div>
-        <div class="field-row">
-          <div class="field"><label>Code postal</label><input type="text" id="f_zip" value="${d.zip||''}"></div>
-          <div class="field"><label>Ville</label><input type="text" id="f_city" value="${d.city||''}"></div>
-        </div>
-        <div class="field"><label>Pays</label>
-          <select id="f_country">
-            <option ${d.country==='France'||!d.country?'selected':''}>France</option>
-            <option ${d.country==='Belgique'?'selected':''}>Belgique</option>
-            <option ${d.country==='Suisse'?'selected':''}>Suisse</option>
-            <option ${d.country==='Luxembourg'?'selected':''}>Luxembourg</option>
-          </select>
-        </div>
-        <div class="nav-btns">
-          <button class="btn btn-outline" id="backToShop">Continuer mes achats</button>
-          <button class="btn" id="toStep2">Continuer</button>
-        </div>
-      </div>`;
-  } else if (state.checkoutStep === 2) {
-    content = `
-      <div class="form-section">
-        <h2>Paiement sécurisé</h2>
-        <div class="field"><label>Nom sur la carte</label><input type="text" id="f_cardname" value="${d.cardname||''}"></div>
-        <div class="field"><label>Numéro de carte</label><input type="text" id="f_card" placeholder="0000 0000 0000 0000" maxlength="19" value="${d.card||''}"></div>
-        <div class="field-row">
-          <div class="field"><label>Expiration</label><input type="text" id="f_exp" placeholder="MM/AA" maxlength="5" value="${d.exp||''}"></div>
-          <div class="field"><label>CVV</label><input type="text" id="f_cvv" placeholder="123" maxlength="4" value="${d.cvv||''}"></div>
-        </div>
-        <p style="font-size:12px;color:var(--muted);margin-top:14px">🔒 Paiement simulé — aucune donnée n'est transmise.</p>
-        <div class="nav-btns">
-          <button class="btn btn-outline" id="backStep1">Retour</button>
-          <button class="btn" id="toStep3">Continuer</button>
-        </div>
-      </div>`;
+  if(state.checkoutStep===1){
+    content = `<div class="form-section">
+      <h2>Adresse de livraison</h2>
+      <div class="field-row">
+        <div class="field"><label>Prénom *</label><input type="text" id="f_first" value="${d.first||''}"></div>
+        <div class="field"><label>Nom *</label><input type="text" id="f_last" value="${d.last||''}"></div>
+      </div>
+      <div class="field"><label>Email *</label><input type="email" id="f_email" value="${d.email||''}"></div>
+      <div class="field"><label>Téléphone</label><input type="tel" id="f_phone" value="${d.phone||''}"></div>
+      <div class="field"><label>Adresse *</label><input type="text" id="f_addr" value="${d.addr||''}"></div>
+      <div class="field-row">
+        <div class="field"><label>Code postal *</label><input type="text" id="f_zip" value="${d.zip||''}"></div>
+        <div class="field"><label>Ville *</label><input type="text" id="f_city" value="${d.city||''}"></div>
+      </div>
+      <div class="field"><label>Pays *</label>
+        <select id="f_country">
+          <option ${d.country==='France'||!d.country?'selected':''}>France</option>
+          <option ${d.country==='Belgique'?'selected':''}>Belgique</option>
+          <option ${d.country==='Suisse'?'selected':''}>Suisse</option>
+          <option ${d.country==='Luxembourg'?'selected':''}>Luxembourg</option>
+        </select>
+      </div>
+      <div class="nav-btns">
+        <button class="btn btn-outline" id="backToShop">Continuer mes achats</button>
+        <button class="btn" id="toStep2">Continuer</button>
+      </div>
+    </div>`;
   } else {
-    content = `
-      <div class="form-section">
-        <h2>Vérifiez votre commande</h2>
-        <div style="background:var(--card);border:1px solid var(--border);border-radius:4px;padding:22px;font-size:13px;line-height:1.9">
-          <div style="color:var(--gold);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px">Livraison</div>
-          ${d.first} ${d.last}<br>${d.addr}<br>${d.zip} ${d.city}, ${d.country}<br>${d.email}
-          <div style="height:1px;background:var(--border);margin:16px 0"></div>
-          <div style="color:var(--gold);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px">Paiement</div>
-          Carte •••• ${(d.card||'').replace(/\s/g,'').slice(-4)}
+    content = `<div class="form-section">
+      <h2>Confirmez votre commande</h2>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:4px;padding:22px;margin-bottom:20px;font-size:13px;line-height:1.9">
+        <div style="color:var(--gold);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px">Livraison à</div>
+        ${d.first} ${d.last}<br>${d.addr}<br>${d.zip} ${d.city}, ${d.country}<br>${d.email}
+      </div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:4px;padding:22px;margin-bottom:20px">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+          <span style="font-size:22px">🔒</span>
+          <div>
+            <div style="font-weight:600">Paiement sécurisé (démo)</div>
+            <div style="font-size:12px;color:var(--muted)">Aucun débit réel — commande simulée</div>
+          </div>
         </div>
-        <div class="nav-btns">
-          <button class="btn btn-outline" id="backStep2">Retour</button>
-          <button class="btn" id="placeOrder">Confirmer et payer ${fmt(t.total)}</button>
-        </div>
-      </div>`;
+        <p style="font-size:12px;color:var(--muted)">Pour activer le vrai paiement Stripe, il faudra ajouter les fonctions backend Netlify (voir avec le développeur).</p>
+      </div>
+      <div class="nav-btns">
+        <button class="btn btn-outline" id="backStep1">Retour</button>
+        <button class="btn" id="payBtn">Confirmer la commande ${fmt(t.total)}</button>
+      </div>
+      <p style="text-align:center;font-size:11px;color:var(--muted);margin-top:14px">En validant, vous acceptez nos <a data-nav="cgv" style="color:var(--gold);text-decoration:underline">CGV</a></p>
+    </div>`;
   }
 
   $('checkoutContent').innerHTML = stepper + `<div class="checkout-grid">${content}${summary}</div>`;
 
-  /* Bindings étape 1 */
-  if (state.checkoutStep === 1) {
-    $('backToShop').onclick = () => goTo('shop');
-    $('toStep2').onclick = () => {
+  if(state.checkoutStep===1){
+    $('backToShop').onclick = ()=>goTo('shop');
+    $('toStep2').onclick = ()=>{
       const data = {
         first:$('f_first').value.trim(), last:$('f_last').value.trim(),
         email:$('f_email').value.trim(), phone:$('f_phone').value.trim(),
         addr:$('f_addr').value.trim(), zip:$('f_zip').value.trim(),
         city:$('f_city').value.trim(), country:$('f_country').value
       };
-      if (!data.first || !data.last || !data.email || !data.addr || !data.zip || !data.city)
+      if(!data.first||!data.last||!data.email||!data.addr||!data.zip||!data.city)
         return toast('Merci de remplir tous les champs obligatoires');
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))
         return toast('Adresse email invalide');
-      Object.assign(state.checkoutData, data);
+      Object.assign(state.checkoutData,data);
       state.checkoutStep = 2;
       renderCheckout();
     };
+  } else {
+    $('backStep1').onclick = ()=>{state.checkoutStep=1;renderCheckout();};
+    $('payBtn').onclick = placeOrder;
   }
+}
 
-  /* Bindings étape 2 */
-  if (state.checkoutStep === 2) {
-    const card = $('f_card'), exp = $('f_exp');
-    card.addEventListener('input', e => {
-      let v = e.target.value.replace(/\D/g,'').slice(0,16);
-      e.target.value = v.replace(/(.{4})/g,'$1 ').trim();
-    });
-    exp.addEventListener('input', e => {
-      let v = e.target.value.replace(/\D/g,'').slice(0,4);
-      if (v.length > 2) v = v.slice(0,2) + '/' + v.slice(2);
-      e.target.value = v;
-    });
-    $('backStep1').onclick = () => { state.checkoutStep = 1; renderCheckout(); };
-    $('toStep3').onclick = () => {
-      const data = {
-        cardname: $('f_cardname').value.trim(),
-        card: card.value.trim(),
-        exp: exp.value.trim(),
-        cvv: $('f_cvv').value.trim()
-      };
-      if (!data.cardname) return toast('Indiquez le nom sur la carte');
-      if (data.card.replace(/\s/g,'').length !== 16) return toast('Numéro de carte invalide');
-      if (!/^\d{2}\/\d{2}$/.test(data.exp)) return toast('Date d\'expiration invalide');
-      if (data.cvv.length < 3) return toast('CVV invalide');
-      Object.assign(state.checkoutData, data);
-      state.checkoutStep = 3;
-      renderCheckout();
+function placeOrder(){
+  const btn = $('payBtn');
+  btn.disabled = true;
+  btn.textContent = 'Traitement en cours…';
+  setTimeout(()=>{
+    const t = computeTotals();
+    state.order = {
+      number: 'PLX-' + Date.now().toString().slice(-8),
+      date: new Date().toLocaleDateString('fr-FR',{day:'numeric',month:'long',year:'numeric'}),
+      items: state.cart.map(it=>({...getProduct(it.id),qty:it.qty})),
+      totals: t,
+      customer: {...state.checkoutData}
     };
-  }
-
-  /* Bindings étape 3 */
-  if (state.checkoutStep === 3) {
-    $('backStep2').onclick = () => { state.checkoutStep = 2; renderCheckout(); };
-    $('placeOrder').onclick = () => placeOrder();
-  }
+    state.cart = [];
+    state.promo = null;
+    saveCart(); updateCartUI();
+    goTo('confirm');
+  }, 1200);
 }
 
-function placeOrder() {
-  const t = computeTotals();
-  state.order = {
-    number: 'PLX-' + Date.now().toString().slice(-8),
-    date: new Date().toLocaleDateString('fr-FR', { day:'numeric', month:'long', year:'numeric' }),
-    items: state.cart.map(it => ({ ...getProduct(it.id), qty: it.qty })),
-    totals: t,
-    customer: { ...state.checkoutData }
-  };
-  state.cart = [];
-  state.promo = null;
-  state.checkoutStep = 1;
-  state.checkoutData = {};
-  saveCart();
-  updateCartUI();
-  goTo('confirm');
-}
-
-/* =========================================================
-   CONFIRMATION
-   ========================================================= */
-function renderConfirm() {
+function renderConfirm(){
   const o = state.order;
-  if (!o) return goTo('home');
-
+  if(!o) return goTo('home');
   $('confirmContent').innerHTML = `
-    <div class="confirm-check">✓</div>
-    <h1>Merci pour votre commande</h1>
-    <p>Un email de confirmation vient d'être envoyé à <strong style="color:var(--gold)">${o.customer.email}</strong>.<br>Votre commande sera expédiée sous 48 h.</p>
-    <div class="order-box">
-      <h3>Commande n° ${o.number}</h3>
+    <div style="width:84px;height:84px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:38px;color:var(--gold);margin:0 auto 30px">✓</div>
+    <h1 style="font-size:38px;margin-bottom:16px">Merci pour votre commande</h1>
+    <p style="color:var(--muted);font-weight:300;margin-bottom:34px">Un email de confirmation vous sera envoyé à <strong style="color:var(--gold)">${o.customer.email}</strong>.<br>Votre commande sera expédiée sous 48 h.</p>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:4px;padding:28px;text-align:left;margin-bottom:34px">
+      <h3 style="font-size:15px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:20px">Commande n° ${o.number}</h3>
       <div style="font-size:13px;color:var(--muted);margin-bottom:18px">Passée le ${o.date}</div>
-      ${o.items.map(p => `
-        <div class="summary-item">
-          <img src="${p.img}" alt="">
+      ${o.items.map(p=>`
+        <div class="summary-item"><img src="${p.img}" alt="">
           <div class="si-t">${p.name}<small>Qté ${p.qty}</small></div>
-          <div class="si-p">${fmt(p.price * p.qty)}</div>
-        </div>`).join('')}
+          <div class="si-p">${fmt(p.price*p.qty)}</div></div>`).join('')}
       <div style="height:1px;background:var(--border);margin:18px 0"></div>
       <div class="sum-row"><span>Sous-total</span><span>${fmt(o.totals.subtotal)}</span></div>
       ${o.totals.discount?`<div class="sum-row discount"><span>Remise</span><span>−${fmt(o.totals.discount)}</span></div>`:''}
@@ -1004,21 +1032,23 @@ function renderConfirm() {
   `;
 }
 
-/* =========================================================
-   MENU MOBILE & NEWSLETTER
-   ========================================================= */
-$('menuBtn').onclick = () => $('mobileNav').classList.toggle('open');
-$('newsletterForm').onsubmit = e => {
-  e.preventDefault();
-  toast('Merci ! Vous êtes inscrit à la newsletter.');
-  e.target.reset();
-};
+function initCookies(){
+  if(!localStorage.getItem('proluxe_cookies')) $('cookieBanner').classList.add('show');
+}
+$('acceptCookies').onclick = ()=>{localStorage.setItem('proluxe_cookies','accepted');$('cookieBanner').classList.remove('show');toast('Préférences enregistrées');};
+$('refuseCookies').onclick = ()=>{localStorage.setItem('proluxe_cookies','refused');$('cookieBanner').classList.remove('show');toast('Cookies non essentiels refusés');};
+$('manageCookies').onclick = ()=>{localStorage.removeItem('proluxe_cookies');$('cookieBanner').classList.add('show');};
+$('menuBtn').onclick = ()=>$('mobileNav').classList.toggle('open');
 
-/* =========================================================
-   INIT
-   ========================================================= */
+$('contactForm')?.addEventListener('submit',e=>{
+  e.preventDefault();
+  toast('Message envoyé ! Nous vous répondrons sous 24h.');
+  e.target.reset();
+});
+
 updateCartUI();
 renderHome();
+initCookies();
 </script>
 </body>
 </html>
